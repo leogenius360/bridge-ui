@@ -38,7 +38,7 @@ const buttonColorVariants: Record<string, Record<string, string>> = {
     default: "bg-[var(--bui-color-default-bg)] text-[var(--bui-color-default-fg)]",
     primary: "bg-[var(--bui-color-primary-100)] text-[var(--bui-color-primary-800)]",
     secondary: "bg-[var(--bui-color-secondary-100)] text-[var(--bui-color-secondary-800)]",
-    danger: "bg-[var(--bui-color-danger-100)] text-[var(--bui-color-danger-700)]",
+    danger: "bg-[var(--bui-color-danger-100)] text-[var(--bui-color-danger-800)]",
     success: "bg-[var(--bui-color-success-100)] text-[var(--bui-color-success-700)]",
     warning: "bg-[var(--bui-color-warning-100)] text-[var(--bui-color-warning-700)]",
   },
@@ -90,7 +90,7 @@ export const buttonRecipe: ClassRecipeFn<ButtonRecipeProps> = (props = {} as But
   const radiusClass = radius ? (buttonRadiusOverrides[radius] ?? "") : "";
   const iconOnlyClass = isIconOnly ? "px-0 aspect-square" : "";
   const disabledClass = isDisabled ? "opacity-50 pointer-events-none" : "";
-  const animationClass = disableAnimation ? "" : "transition-transform-colors-opacity";
+  const animationClass = disableAnimation ? "" : "transition-all";
 
   return cn(buttonBase, colorClass, sizeClass, radiusClass, fullWidth ? "w-full" : "", iconOnlyClass, disabledClass, animationClass);
 };
