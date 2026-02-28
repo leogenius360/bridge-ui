@@ -1,6 +1,6 @@
 # Introduction
 
-**BridgeUI** is a semantic, multi-framework UI component library with optional styling.
+**BridgeUI** is a semantic, multi-framework UI component library with optional styling, powered by [Ark UI](https://ark-ui.com) and [Zag.js](https://zagjs.com) for headless, accessible component behavior.
 
 ## What makes BridgeUI different?
 
@@ -29,15 +29,17 @@ BridgeUI has three layers:
 ├─────────────────────────────────┤
 │  @bridge-ui/core    (contract)  │  Props, slots, variant schemas
 ├─────────────────────────────────┤
-│  @bridge-ui/react               │  React components
-│  @bridge-ui/svelte              │  Svelte components
+│  @bridge-ui/react               │  React components (Ark UI / Zag.js)
+│  @bridge-ui/svelte              │  Svelte components (Ark UI / Zag.js)
 └─────────────────────────────────┘
 ```
 
 ### Behavior layer
 
 `@bridge-ui/react` and `@bridge-ui/svelte` implement the component API
-with full accessibility support (ARIA, keyboard navigation).
+using [Ark UI](https://ark-ui.com) (powered by [Zag.js](https://zagjs.com))
+for accessible, headless behavior — including focus trapping, scroll lock,
+keyboard navigation, and ARIA attributes.
 
 ### Contract layer
 

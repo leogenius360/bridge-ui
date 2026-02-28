@@ -1,4 +1,14 @@
 import React from "react";
+import {
+  DialogRoot,
+  DialogBackdrop,
+  DialogPositioner,
+  DialogContent,
+  DialogTitle,
+  DialogDescription,
+  DialogCloseTrigger,
+} from "@ark-ui/react/dialog";
+import { Portal } from "@ark-ui/react/portal";
 import type { DialogProps } from "@bridge-ui/core/dialog";
 import { DialogDefaults } from "@bridge-ui/core/dialog";
 import { cn } from "@bridge-ui/utils";
@@ -42,11 +52,11 @@ export interface ReactDialogProps extends DialogProps {
 }
 
 /**
- * BridgeUI React Dialog component.
+ * BridgeUI React Dialog component — powered by Ark UI / Zag.js.
  *
- * ## Styling modes
- * - **Styled**: Pass `slotRecipe` from `@bridge-ui/styles/recipes`.
- * - **Unstyled / BYO**: Pass `classes` per slot or `className` on the root.
+ * Uses Ark UI's Dialog primitives for accessible, headless dialog behavior
+ * (focus trap, scroll lock, Escape key, backdrop click) while BridgeUI
+ * provides the styling layer via `slotRecipe` and `classes` props.
  *
  * @example
  * ```tsx
@@ -80,55 +90,43 @@ export const Dialog: React.FC<ReactDialogProps> = ({
   const s = (slot: keyof DialogSlotClasses, extra?: string) =>
     cn(slots[slot], classes?.[slot], extra);
 
-  // Handle Escape key
-  React.useEffect(() => {
-    if (!open || !closeOnEscape) return;
-    const handler = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onOpenChange?.(false);
-    };
-    document.addEventListener("keydown", handler);
-    return () => document.removeEventListener("keydown", handler);
-  }, [open, closeOnEscape, onOpenChange]);
-
-  if (!open) return null;
-
   return (
-    <div role="presentation" className={s("root", className)}>
-      {hasBackdrop && (
-        <div
-          aria-hidden="true"
-          className={s("backdrop")}
-          onClick={closeOnBackdropClick ? () => onOpenChange?.(false) : undefined}
-        />
-      )}
-      <div className={s("positioner")}>
-        <div
-          role={role}
-          aria-modal="true"
-          aria-label={title}
-          className={s("content")}
-        >
-          {(title || description) && (
-            <div className={s("header")}>
-              <div>
-                {title && <h2 className={s("title")}>{title}</h2>}
-                {description && <p className={s("description")}>{description}</p>}
+    <DialogRoot
+      open={open}
+      onOpenChange={(details) => onOpenChange?.(details.open)}
+      closeOnEscape={closeOnEscape}
+      closeOnInteractOutside={closeOnBackdropClick}
+      role={role}
+      lazyMount
+      unmountOnExit
+    >
+      <Portal>
+        {hasBackdrop && <DialogBackdrop className={s("backdrop")} />}
+        <DialogPositioner className={s("positioner")}>
+          <DialogContent className={s("content", className)}>
+            {(title || description) && (
+              <div className={s("header")}>
+                <div>
+                  {title && (
+                    <DialogTitle className={s("title")}>{title}</DialogTitle>
+                  )}
+                  {description && (
+                    <DialogDescription className={s("description")}>
+                      {description}
+                    </DialogDescription>
+                  )}
+                </div>
+                <DialogCloseTrigger className={s("closeTrigger")} aria-label="Close dialog">
+                  ✕
+                </DialogCloseTrigger>
               </div>
-              <button
-                type="button"
-                aria-label="Close dialog"
-                className={s("closeTrigger")}
-                onClick={() => onOpenChange?.(false)}
-              >
-                ✕
-              </button>
-            </div>
-          )}
-          <div className={s("body")}>{children}</div>
-          {footer && <div className={s("footer")}>{footer}</div>}
-        </div>
-      </div>
-    </div>
+            )}
+            <div className={s("body")}>{children}</div>
+            {footer && <div className={s("footer")}>{footer}</div>}
+          </DialogContent>
+        </DialogPositioner>
+      </Portal>
+    </DialogRoot>
   );
 };
 

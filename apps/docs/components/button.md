@@ -51,6 +51,7 @@ import { buttonRecipe } from "@bridge-ui/styles/recipes";
 <Button color="default" recipe={buttonRecipe}>Default</Button>
 <Button color="primary" recipe={buttonRecipe}>Primary</Button>
 <Button color="secondary" recipe={buttonRecipe}>Secondary</Button>
+<Button color="tertiary" recipe={buttonRecipe}>Tertiary</Button>
 <Button color="danger" recipe={buttonRecipe}>Danger</Button>
 <Button color="success" recipe={buttonRecipe}>Success</Button>
 <Button color="warning" recipe={buttonRecipe}>Warning</Button>
@@ -71,18 +72,22 @@ import { buttonRecipe } from "@bridge-ui/styles/recipes";
 ## Sizes
 
 ```tsx
+<Button size="xs" recipe={buttonRecipe}>XS</Button>
 <Button size="sm" recipe={buttonRecipe}>SM</Button>
 <Button size="md" recipe={buttonRecipe}>MD</Button>
 <Button size="lg" recipe={buttonRecipe}>LG</Button>
+<Button size="xl" recipe={buttonRecipe}>XL</Button>
 ```
 
 ## Radius
 
 ```tsx
 <Button radius="none" recipe={buttonRecipe}>None</Button>
+<Button radius="xs" recipe={buttonRecipe}>XS</Button>
 <Button radius="sm" recipe={buttonRecipe}>SM</Button>
 <Button radius="md" recipe={buttonRecipe}>MD</Button>
 <Button radius="lg" recipe={buttonRecipe}>LG</Button>
+<Button radius="xl" recipe={buttonRecipe}>XL</Button>
 <Button radius="full" recipe={buttonRecipe}>Full</Button>
 ```
 

@@ -8,6 +8,7 @@ export const ColorTokenNames = [
   "default",
   "primary",
   "secondary",
+  "tertiary",
   "success",
   "warning",
   "danger",

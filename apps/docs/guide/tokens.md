@@ -31,7 +31,7 @@ All tokens are prefixed with `--bui-` to avoid conflicts.
 | `--bui-color-primary-border` | Border color for primary color |
 | `--bui-color-primary-hover-bg` | Hover background for primary color |
 
-Same pattern for: `default`, `secondary`, `danger`, `success`, `warning`.
+Same pattern for: `default`, `secondary`, `tertiary`, `danger`, `success`, `warning`.
 
 ### Global semantic tokens
 

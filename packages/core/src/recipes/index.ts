@@ -32,7 +32,7 @@ export interface ButtonRecipeProps {
   color: Color;
   size: Size;
   variant: Variant;
-  radius: "none" | "sm" | "md" | "lg" | "full";
+  radius: "none" | "xs" | "sm" | "md" | "lg" | "xl" | "full";
   isLoading: boolean;
   isDisabled: boolean;
   isIconOnly: boolean;

@@ -14,6 +14,7 @@ const buttonColorVariants: Record<string, Record<string, string>> = {
     default: "bg-[var(--bui-color-default-bg)] text-[var(--bui-color-default-fg)] hover:bg-[var(--bui-color-default-hover-bg)] border border-[var(--bui-color-default-border)]",
     primary: "bg-[var(--bui-color-primary-bg)] text-[var(--bui-color-primary-fg)] hover:bg-[var(--bui-color-primary-hover-bg)]",
     secondary: "bg-[var(--bui-color-secondary-bg)] text-[var(--bui-color-secondary-fg)] hover:bg-[var(--bui-color-secondary-hover-bg)]",
+    tertiary: "bg-[var(--bui-color-tertiary-bg)] text-[var(--bui-color-tertiary-fg)] hover:bg-[var(--bui-color-tertiary-hover-bg)]",
     danger: "bg-[var(--bui-color-danger-bg)] text-[var(--bui-color-danger-fg)] hover:bg-[var(--bui-color-danger-hover-bg)]",
     success: "bg-[var(--bui-color-success-bg)] text-[var(--bui-color-success-fg)] hover:bg-[var(--bui-color-success-hover-bg)]",
     warning: "bg-[var(--bui-color-warning-bg)] text-[var(--bui-color-warning-fg)] hover:bg-[var(--bui-color-warning-hover-bg)]",
@@ -22,6 +23,7 @@ const buttonColorVariants: Record<string, Record<string, string>> = {
     default: "border border-[var(--bui-color-default-border)] text-[var(--bui-color-default-fg)] bg-transparent hover:bg-[var(--bui-color-default-hover-bg)]",
     primary: "border border-[var(--bui-color-primary-border)] text-[var(--bui-color-primary-bg)] bg-transparent hover:bg-[var(--bui-color-primary-50)]",
     secondary: "border border-[var(--bui-color-secondary-border)] text-[var(--bui-color-secondary-bg)] bg-transparent hover:bg-[var(--bui-color-secondary-50)]",
+    tertiary: "border border-[var(--bui-color-tertiary-border)] text-[var(--bui-color-tertiary-bg)] bg-transparent hover:bg-[var(--bui-color-tertiary-50)]",
     danger: "border border-[var(--bui-color-danger-border)] text-[var(--bui-color-danger-bg)] bg-transparent hover:bg-[var(--bui-color-danger-50)]",
     success: "border border-[var(--bui-color-success-border)] text-[var(--bui-color-success-bg)] bg-transparent hover:bg-[var(--bui-color-success-50)]",
     warning: "border border-[var(--bui-color-warning-border)] text-[var(--bui-color-warning-bg)] bg-transparent hover:bg-[var(--bui-color-warning-50)]",
@@ -30,6 +32,7 @@ const buttonColorVariants: Record<string, Record<string, string>> = {
     default: "text-[var(--bui-color-default-fg)] bg-transparent hover:bg-[var(--bui-color-default-hover-bg)]",
     primary: "text-[var(--bui-color-primary-bg)] bg-transparent hover:bg-[var(--bui-color-primary-50)]",
     secondary: "text-[var(--bui-color-secondary-bg)] bg-transparent hover:bg-[var(--bui-color-secondary-50)]",
+    tertiary: "text-[var(--bui-color-tertiary-bg)] bg-transparent hover:bg-[var(--bui-color-tertiary-50)]",
     danger: "text-[var(--bui-color-danger-bg)] bg-transparent hover:bg-[var(--bui-color-danger-50)]",
     success: "text-[var(--bui-color-success-bg)] bg-transparent hover:bg-[var(--bui-color-success-50)]",
     warning: "text-[var(--bui-color-warning-bg)] bg-transparent hover:bg-[var(--bui-color-warning-50)]",
@@ -38,6 +41,7 @@ const buttonColorVariants: Record<string, Record<string, string>> = {
     default: "bg-[var(--bui-color-default-bg)] text-[var(--bui-color-default-fg)]",
     primary: "bg-[var(--bui-color-primary-100)] text-[var(--bui-color-primary-800)]",
     secondary: "bg-[var(--bui-color-secondary-100)] text-[var(--bui-color-secondary-800)]",
+    tertiary: "bg-[var(--bui-color-tertiary-100)] text-[var(--bui-color-tertiary-800)]",
     danger: "bg-[var(--bui-color-danger-100)] text-[var(--bui-color-danger-800)]",
     success: "bg-[var(--bui-color-success-100)] text-[var(--bui-color-success-700)]",
     warning: "bg-[var(--bui-color-warning-100)] text-[var(--bui-color-warning-700)]",
@@ -46,6 +50,7 @@ const buttonColorVariants: Record<string, Record<string, string>> = {
     default: "border border-[var(--bui-color-default-border)] bg-[var(--bui-color-default-bg)] text-[var(--bui-color-default-fg)]",
     primary: "border border-[var(--bui-color-default-border)] bg-[var(--bui-color-default-bg)] text-[var(--bui-color-primary-bg)]",
     secondary: "border border-[var(--bui-color-default-border)] bg-[var(--bui-color-default-bg)] text-[var(--bui-color-secondary-bg)]",
+    tertiary: "border border-[var(--bui-color-default-border)] bg-[var(--bui-color-default-bg)] text-[var(--bui-color-tertiary-bg)]",
     danger: "border border-[var(--bui-color-default-border)] bg-[var(--bui-color-default-bg)] text-[var(--bui-color-danger-bg)]",
     success: "border border-[var(--bui-color-default-border)] bg-[var(--bui-color-default-bg)] text-[var(--bui-color-success-bg)]",
     warning: "border border-[var(--bui-color-default-border)] bg-[var(--bui-color-default-bg)] text-[var(--bui-color-warning-bg)]",
@@ -54,6 +59,7 @@ const buttonColorVariants: Record<string, Record<string, string>> = {
     default: "bg-[var(--bui-color-default-bg)] text-[var(--bui-color-default-fg)] shadow-[var(--bui-shadow-md)] hover:shadow-[var(--bui-shadow-lg)]",
     primary: "bg-[var(--bui-color-primary-bg)] text-[var(--bui-color-primary-fg)] shadow-[var(--bui-shadow-md)] hover:shadow-[var(--bui-shadow-lg)]",
     secondary: "bg-[var(--bui-color-secondary-bg)] text-[var(--bui-color-secondary-fg)] shadow-[var(--bui-shadow-md)] hover:shadow-[var(--bui-shadow-lg)]",
+    tertiary: "bg-[var(--bui-color-tertiary-bg)] text-[var(--bui-color-tertiary-fg)] shadow-[var(--bui-shadow-md)] hover:shadow-[var(--bui-shadow-lg)]",
     danger: "bg-[var(--bui-color-danger-bg)] text-[var(--bui-color-danger-fg)] shadow-[var(--bui-shadow-md)] hover:shadow-[var(--bui-shadow-lg)]",
     success: "bg-[var(--bui-color-success-bg)] text-[var(--bui-color-success-fg)] shadow-[var(--bui-shadow-md)] hover:shadow-[var(--bui-shadow-lg)]",
     warning: "bg-[var(--bui-color-warning-bg)] text-[var(--bui-color-warning-fg)] shadow-[var(--bui-shadow-md)] hover:shadow-[var(--bui-shadow-lg)]",
@@ -62,6 +68,7 @@ const buttonColorVariants: Record<string, Record<string, string>> = {
     default: "border border-[var(--bui-color-default-border)] text-[var(--bui-color-default-fg)] bg-transparent hover:bg-[var(--bui-color-default-bg)]",
     primary: "border border-[var(--bui-color-primary-border)] text-[var(--bui-color-primary-bg)] bg-transparent hover:bg-[var(--bui-color-primary-bg)] hover:text-[var(--bui-color-primary-fg)]",
     secondary: "border border-[var(--bui-color-secondary-border)] text-[var(--bui-color-secondary-bg)] bg-transparent hover:bg-[var(--bui-color-secondary-bg)] hover:text-[var(--bui-color-secondary-fg)]",
+    tertiary: "border border-[var(--bui-color-tertiary-border)] text-[var(--bui-color-tertiary-bg)] bg-transparent hover:bg-[var(--bui-color-tertiary-bg)] hover:text-[var(--bui-color-tertiary-fg)]",
     danger: "border border-[var(--bui-color-danger-border)] text-[var(--bui-color-danger-bg)] bg-transparent hover:bg-[var(--bui-color-danger-bg)] hover:text-[var(--bui-color-danger-fg)]",
     success: "border border-[var(--bui-color-success-border)] text-[var(--bui-color-success-bg)] bg-transparent hover:bg-[var(--bui-color-success-bg)] hover:text-[var(--bui-color-success-fg)]",
     warning: "border border-[var(--bui-color-warning-border)] text-[var(--bui-color-warning-bg)] bg-transparent hover:bg-[var(--bui-color-warning-bg)] hover:text-[var(--bui-color-warning-fg)]",
@@ -69,16 +76,20 @@ const buttonColorVariants: Record<string, Record<string, string>> = {
 };
 
 const buttonSizeClasses: Record<string, string> = {
+  xs: "h-6 px-2 text-xs gap-1 rounded-[var(--bui-radius-xs)]",
   sm: "h-8 px-3 text-sm gap-2 rounded-[var(--bui-radius-sm)]",
   md: "h-10 px-4 text-sm gap-2 rounded-[var(--bui-radius-md)]",
   lg: "h-12 px-6 text-base gap-3 rounded-[var(--bui-radius-lg)]",
+  xl: "h-14 px-8 text-lg gap-3 rounded-[var(--bui-radius-xl)]",
 };
 
 const buttonRadiusOverrides: Record<string, string> = {
   none: "rounded-none",
+  xs: "rounded-[var(--bui-radius-xs)]",
   sm: "rounded-[var(--bui-radius-sm)]",
   md: "rounded-[var(--bui-radius-md)]",
   lg: "rounded-[var(--bui-radius-lg)]",
+  xl: "rounded-[var(--bui-radius-xl)]",
   full: "rounded-[var(--bui-radius-full)]",
 };
 

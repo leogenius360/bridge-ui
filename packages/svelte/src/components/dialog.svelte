@@ -1,5 +1,8 @@
 <script lang="ts">
-  import { createEventDispatcher, onMount, onDestroy } from "svelte";
+  import {
+    Dialog as ArkDialog,
+  } from "@ark-ui/svelte/dialog";
+  import { Portal } from "@ark-ui/svelte/portal";
   import type { DialogProps } from "@bridge-ui/core/dialog";
   import { DialogDefaults } from "@bridge-ui/core/dialog";
   import { cn } from "@bridge-ui/utils";
@@ -18,92 +21,92 @@
   }>;
 
   // ── Props ──────────────────────────────────────────────────────────────
-  export let open: boolean = DialogDefaults.open ?? false;
-  export let hasBackdrop: boolean = DialogDefaults.hasBackdrop ?? true;
-  export let centered: boolean = DialogDefaults.centered ?? false;
-  export let scrollBehavior: "inside" | "outside" = DialogDefaults.scrollBehavior ?? "outside";
-  export let closeOnEscape: boolean = DialogDefaults.closeOnEscape ?? true;
-  export let closeOnBackdropClick: boolean = DialogDefaults.closeOnBackdropClick ?? true;
-  export let role: "dialog" | "alertdialog" = DialogDefaults.role ?? "dialog";
-  export let title: string | undefined = undefined;
-  export let description: string | undefined = undefined;
-  /**
-   * Optional slot recipe from `@bridge-ui/styles/recipes`.
-   */
-  export let slotRecipe: ((props?: Partial<DialogProps>) => DialogSlotClasses) | undefined = undefined;
-  /** Per-slot class overrides */
-  export let classes: DialogSlotClasses = {};
-  let className: string | undefined = undefined;
-  export { className as class };
+  let {
+    open = DialogDefaults.open ?? false,
+    onOpenChange,
+    hasBackdrop = DialogDefaults.hasBackdrop ?? true,
+    centered = DialogDefaults.centered ?? false,
+    scrollBehavior = DialogDefaults.scrollBehavior ?? "outside",
+    closeOnEscape = DialogDefaults.closeOnEscape ?? true,
+    closeOnBackdropClick = DialogDefaults.closeOnBackdropClick ?? true,
+    role = DialogDefaults.role ?? "dialog",
+    title = undefined,
+    description = undefined,
+    slotRecipe = undefined,
+    classes = {},
+    class: className = undefined,
+    children,
+    footer,
+  }: {
+    open?: boolean;
+    onOpenChange?: (open: boolean) => void;
+    hasBackdrop?: boolean;
+    centered?: boolean;
+    scrollBehavior?: "inside" | "outside";
+    closeOnEscape?: boolean;
+    closeOnBackdropClick?: boolean;
+    role?: "dialog" | "alertdialog";
+    title?: string;
+    description?: string;
+    slotRecipe?: ((props?: Partial<DialogProps>) => DialogSlotClasses) | undefined;
+    classes?: DialogSlotClasses;
+    class?: string;
+    children?: import("svelte").Snippet;
+    footer?: import("svelte").Snippet;
+  } = $props();
 
-  const dispatch = createEventDispatcher<{ "open-change": { open: boolean } }>();
-
-  function close() {
-    open = false;
-    dispatch("open-change", { open: false });
+  function handleOpenChange(details: { open: boolean }) {
+    onOpenChange?.(details.open);
   }
-
-  function handleBackdropClick() {
-    if (closeOnBackdropClick) close();
-  }
-
-  function handleKeydown(e: KeyboardEvent) {
-    if (closeOnEscape && e.key === "Escape") close();
-  }
-
-  onMount(() => {
-    document.addEventListener("keydown", handleKeydown);
-  });
-  onDestroy(() => {
-    document.removeEventListener("keydown", handleKeydown);
-  });
 
   // ── Derived ────────────────────────────────────────────────────────────
-  $: slots = slotRecipe ? slotRecipe({ centered, scrollBehavior }) : ({} as DialogSlotClasses);
-  $: s = (slot: keyof DialogSlotClasses, extra?: string) =>
-    cn(slots[slot], classes[slot], extra);
+  let slots = $derived(slotRecipe ? slotRecipe({ centered, scrollBehavior }) : ({} as DialogSlotClasses));
+  function s(slot: keyof DialogSlotClasses, extra?: string) {
+    return cn(slots[slot], classes[slot], extra);
+  }
 </script>
 
-{#if open}
-  <div role="presentation" class={s("root", className)}>
+<ArkDialog.Root
+  {open}
+  onOpenChange={handleOpenChange}
+  closeOnEscape={closeOnEscape}
+  closeOnInteractOutside={closeOnBackdropClick}
+  {role}
+  lazyMount
+  unmountOnExit
+>
+  <Portal>
     {#if hasBackdrop}
-      <!-- svelte-ignore a11y-click-events-have-key-events -->
-      <!-- svelte-ignore a11y-no-static-element-interactions -->
-      <div aria-hidden="true" class={s("backdrop")} on:click={handleBackdropClick} />
+      <ArkDialog.Backdrop class={s("backdrop")} />
     {/if}
-    <div class={s("positioner")}>
-      <div {role} aria-modal="true" aria-label={title} class={s("content")}>
+    <ArkDialog.Positioner class={s("positioner")}>
+      <ArkDialog.Content class={s("content", className)}>
         {#if title || description}
           <div class={s("header")}>
             <div>
               {#if title}
-                <h2 class={s("title")}>{title}</h2>
+                <ArkDialog.Title class={s("title")}>{title}</ArkDialog.Title>
               {/if}
               {#if description}
-                <p class={s("description")}>{description}</p>
+                <ArkDialog.Description class={s("description")}>{description}</ArkDialog.Description>
               {/if}
             </div>
-            <button
-              type="button"
-              aria-label="Close dialog"
-              class={s("closeTrigger")}
-              on:click={close}
-            >
+            <ArkDialog.CloseTrigger class={s("closeTrigger")} aria-label="Close dialog">
               ✕
-            </button>
+            </ArkDialog.CloseTrigger>
           </div>
         {/if}
         <div class={s("body")}>
-          <slot />
-        </div>
-        <slot name="footer">
-          {#if $$slots.footer}
-            <div class={s("footer")}>
-              <slot name="footer" />
-            </div>
+          {#if children}
+            {@render children()}
           {/if}
-        </slot>
-      </div>
-    </div>
-  </div>
-{/if}
+        </div>
+        {#if footer}
+          <div class={s("footer")}>
+            {@render footer()}
+          </div>
+        {/if}
+      </ArkDialog.Content>
+    </ArkDialog.Positioner>
+  </Portal>
+</ArkDialog.Root>

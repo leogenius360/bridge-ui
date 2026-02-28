@@ -4,71 +4,86 @@
   import { cn } from "@bridge-ui/utils";
 
   // ── Props ──────────────────────────────────────────────────────────────
-  /** Semantic color scheme */
-  export let color: ButtonProps["color"] = ButtonDefaults.color;
-  /** Visual variant */
-  export let variant: ButtonProps["variant"] = ButtonDefaults.variant;
-  /** Size */
-  export let size: ButtonProps["size"] = ButtonDefaults.size;
-  /** Border radius */
-  export let radius: ButtonProps["radius"] = ButtonDefaults.radius;
-  /** Loading state */
-  export let isLoading: boolean = ButtonDefaults.isLoading ?? false;
-  /** Disabled state */
-  export let isDisabled: boolean = ButtonDefaults.isDisabled ?? false;
-  /** Icon-only mode */
-  export let isIconOnly: boolean = ButtonDefaults.isIconOnly ?? false;
-  /** Full-width mode */
-  export let fullWidth: boolean = ButtonDefaults.fullWidth ?? false;
-  /** Disable animations */
-  export let disableAnimation: boolean = ButtonDefaults.disableAnimation ?? false;
-  /** Native button type */
-  export let type: "button" | "submit" | "reset" = ButtonDefaults.type ?? "button";
-  /** Spinner placement */
-  export let spinnerPlacement: "start" | "end" = ButtonDefaults.spinnerPlacement ?? "start";
-  /**
-   * Optional class recipe from `@bridge-ui/styles/recipes`.
-   * If omitted, no library classes are applied.
-   */
-  export let recipe: ((props?: Partial<ButtonProps>) => string) | undefined = undefined;
-  /** Additional class(es) to merge with recipe output */
-  let className: string | undefined = undefined;
-  export { className as class };
+  let {
+    color = ButtonDefaults.color,
+    variant = ButtonDefaults.variant,
+    size = ButtonDefaults.size,
+    radius = ButtonDefaults.radius,
+    isLoading = ButtonDefaults.isLoading ?? false,
+    isDisabled = ButtonDefaults.isDisabled ?? false,
+    isIconOnly = ButtonDefaults.isIconOnly ?? false,
+    fullWidth = ButtonDefaults.fullWidth ?? false,
+    disableAnimation = ButtonDefaults.disableAnimation ?? false,
+    type = ButtonDefaults.type ?? "button",
+    spinnerPlacement = ButtonDefaults.spinnerPlacement ?? "start",
+    recipe = undefined,
+    class: className = undefined,
+    children,
+    startContent,
+    endContent,
+    spinner,
+    onclick,
+    ...restProps
+  }: {
+    color?: ButtonProps["color"];
+    variant?: ButtonProps["variant"];
+    size?: ButtonProps["size"];
+    radius?: ButtonProps["radius"];
+    isLoading?: boolean;
+    isDisabled?: boolean;
+    isIconOnly?: boolean;
+    fullWidth?: boolean;
+    disableAnimation?: boolean;
+    type?: "button" | "submit" | "reset";
+    spinnerPlacement?: "start" | "end";
+    recipe?: ((props?: Partial<ButtonProps>) => string) | undefined;
+    class?: string;
+    children?: import("svelte").Snippet;
+    startContent?: import("svelte").Snippet;
+    endContent?: import("svelte").Snippet;
+    spinner?: import("svelte").Snippet;
+    onclick?: (e: MouseEvent) => void;
+    [key: string]: unknown;
+  } = $props();
 
   // ── Derived ────────────────────────────────────────────────────────────
-  $: recipeClass = recipe
-    ? recipe({ color, variant, size, radius, isLoading, isDisabled, isIconOnly, fullWidth, disableAnimation })
-    : "";
-  $: disabled = isDisabled || isLoading;
-  $: computedClass = cn(recipeClass, className);
+  let recipeClass = $derived(
+    recipe
+      ? recipe({ color, variant, size, radius, isLoading, isDisabled, isIconOnly, fullWidth, disableAnimation })
+      : ""
+  );
+  let disabled = $derived(isDisabled || isLoading);
+  let computedClass = $derived(cn(recipeClass, className));
 </script>
 
 <button
   {type}
-  disabled={disabled}
+  {disabled}
   aria-disabled={disabled}
   aria-busy={isLoading}
   class={computedClass}
-  on:click
-  on:focus
-  on:blur
-  on:mouseenter
-  on:mouseleave
-  {...$$restProps}
+  {onclick}
+  {...restProps}
 >
   {#if isLoading && spinnerPlacement === "start"}
-    <slot name="spinner">
-      <span aria-hidden="true" class="bui-spinner" />
-    </slot>
-  {:else}
-    <slot name="start-content" />
+    {#if spinner}
+      {@render spinner()}
+    {:else}
+      <span aria-hidden="true" class="bui-spinner"></span>
+    {/if}
+  {:else if startContent}
+    {@render startContent()}
   {/if}
-  <slot />
+  {#if children}
+    {@render children()}
+  {/if}
   {#if isLoading && spinnerPlacement === "end"}
-    <slot name="spinner">
-      <span aria-hidden="true" class="bui-spinner" />
-    </slot>
-  {:else}
-    <slot name="end-content" />
+    {#if spinner}
+      {@render spinner()}
+    {:else}
+      <span aria-hidden="true" class="bui-spinner"></span>
+    {/if}
+  {:else if endContent}
+    {@render endContent()}
   {/if}
 </button>

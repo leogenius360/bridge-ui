@@ -2,18 +2,18 @@
   import { Button, Dialog } from "@bridge-ui/svelte";
   import { buttonRecipe, dialogSlotRecipe } from "@bridge-ui/styles/recipes";
 
-  let dialogOpen = false;
+  let dialogOpen = $state(false);
 
-  const colors = ["default", "primary", "secondary", "danger", "success", "warning"] as const;
+  const colors = ["default", "primary", "secondary", "tertiary", "danger", "success", "warning"] as const;
   const variants = ["solid", "bordered", "light", "flat", "faded", "shadow", "ghost"] as const;
-  const sizes = ["sm", "md", "lg"] as const;
-  const radii = ["none", "sm", "md", "lg", "full"] as const;
+  const sizes = ["xs", "sm", "md", "lg", "xl"] as const;
+  const radii = ["none", "xs", "sm", "md", "lg", "xl", "full"] as const;
 </script>
 
 <div class="min-h-screen bg-bui-bg text-bui-fg p-8">
   <h1 class="text-3xl font-bold mb-2">BridgeUI Svelte Playground</h1>
   <p class="text-bui-fg-muted mb-8">
-    Semantic component API · Multi-framework · Optional Tailwind styling
+    Semantic component API · Multi-framework · Optional Tailwind styling · Powered by Ark UI / Zag.js
   </p>
 
   <!-- Buttons — colors -->
@@ -73,25 +73,27 @@
     </Button>
   </section>
 
-  <!-- Dialog -->
+  <!-- Dialog (Ark UI / Zag.js) -->
   <section class="mb-10">
-    <h2 class="text-xl font-semibold mb-4">Dialog</h2>
-    <Button color="primary" recipe={buttonRecipe} on:click={() => (dialogOpen = true)}>
+    <h2 class="text-xl font-semibold mb-4">Dialog (Ark UI / Zag.js)</h2>
+    <Button color="primary" recipe={buttonRecipe} onclick={() => (dialogOpen = true)}>
       Open Dialog
     </Button>
     <Dialog
       open={dialogOpen}
-      on:open-change={(e) => (dialogOpen = e.detail.open)}
+      onOpenChange={(open) => (dialogOpen = open)}
       title="Example Dialog"
-      description="This is a BridgeUI Svelte dialog with Tailwind styling."
+      description="This is a BridgeUI Svelte dialog — powered by Ark UI / Zag.js."
       slotRecipe={dialogSlotRecipe}
     >
-      <p>Dialog body content goes here.</p>
-      <svelte:fragment slot="footer">
-        <Button color="primary" recipe={buttonRecipe} on:click={() => (dialogOpen = false)}>
+      {#snippet children()}
+        <p>Dialog body content goes here.</p>
+      {/snippet}
+      {#snippet footer()}
+        <Button color="primary" recipe={buttonRecipe} onclick={() => (dialogOpen = false)}>
           Close
         </Button>
-      </svelte:fragment>
+      {/snippet}
     </Dialog>
   </section>
 </div>

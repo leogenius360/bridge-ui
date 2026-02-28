@@ -6,7 +6,7 @@ hero:
   text: Semantic · Multi-framework · Escapably styled
   tagline: >
     A unified design semantic API with headless behavior and optional Tailwind styling.
-    React + Svelte today, more frameworks tomorrow.
+    Powered by Ark UI / Zag.js. React + Svelte today, more frameworks tomorrow.
   actions:
     - theme: brand
       text: Get Started
@@ -19,7 +19,7 @@ features:
   - icon: 🎨
     title: Semantic Color API
     details: >
-      Meaningful color-scheme tokens (primary, secondary, danger, …)
+      Meaningful color-scheme tokens (primary, secondary, tertiary, danger, …)
       that describe structural purpose rather than raw values.
   - icon: ⚡
     title: Multi-framework
@@ -31,6 +31,11 @@ features:
     details: >
       Tailwind by default via an opt-in preset, but fully escapable.
       Bring your own CSS modules, vanilla CSS, Panda, or any other styling system.
+  - icon: 🏗️
+    title: Ark UI / Zag.js
+    details: >
+      Headless, accessible component behavior powered by Ark UI and Zag.js —
+      focus trapping, scroll lock, keyboard navigation, and ARIA out of the box.
   - icon: 🌲
     title: Tree-shakeable
     details: >

@@ -1,6 +1,6 @@
 # @bridge-ui/react
 
-React components for BridgeUI — semantic colors, optional Tailwind styling, fully accessible.
+React components for BridgeUI — semantic colors, optional Tailwind styling, powered by [Ark UI](https://ark-ui.com) / [Zag.js](https://zagjs.com) for accessible headless behavior.
 
 ## Installation
 

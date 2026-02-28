@@ -1,6 +1,6 @@
 # @bridge-ui/svelte
 
-Svelte components for BridgeUI — semantic colors, optional Tailwind styling, fully accessible.
+Svelte 5 components for BridgeUI — semantic colors, optional Tailwind styling, powered by [Ark UI](https://ark-ui.com) / [Zag.js](https://zagjs.com) for accessible headless behavior.
 
 ## Installation
 

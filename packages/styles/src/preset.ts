@@ -45,6 +45,12 @@ export const bridgeUIPreset: Config = {
           border: "var(--bui-color-secondary-border)",
           hover: "var(--bui-color-secondary-hover-bg)",
         },
+        tertiary: {
+          DEFAULT: "var(--bui-color-tertiary-bg)",
+          fg: "var(--bui-color-tertiary-fg)",
+          border: "var(--bui-color-tertiary-border)",
+          hover: "var(--bui-color-tertiary-hover-bg)",
+        },
         danger: {
           DEFAULT: "var(--bui-color-danger-bg)",
           fg: "var(--bui-color-danger-fg)",
@@ -69,6 +75,7 @@ export const bridgeUIPreset: Config = {
         mono: ["var(--bui-font-family-mono)"],
       },
       borderRadius: {
+        "bui-xs": "var(--bui-radius-xs)",
         "bui-sm": "var(--bui-radius-sm)",
         "bui-md": "var(--bui-radius-md)",
         "bui-lg": "var(--bui-radius-lg)",

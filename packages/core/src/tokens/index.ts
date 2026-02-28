@@ -6,6 +6,7 @@ export type Color =
   | "default"
   | "primary"
   | "secondary"
+  | "tertiary"
   | "success"
   | "warning"
   | "danger";
@@ -13,7 +14,7 @@ export type Color =
 /**
  * BridgeUI size values.
  */
-export type Size = "sm" | "md" | "lg";
+export type Size = "xs" | "sm" | "md" | "lg" | "xl";
 
 /**
  * BridgeUI visual appearance/variant values.
@@ -23,7 +24,7 @@ export type Variant = "solid" | "bordered" | "light" | "flat" | "faded" | "shado
 /**
  * BridgeUI radius values.
  */
-export type Radius = "none" | "sm" | "md" | "lg" | "full";
+export type Radius = "none" | "xs" | "sm" | "md" | "lg" | "xl" | "full";
 
 /**
  * Common props shared by all BridgeUI components.
