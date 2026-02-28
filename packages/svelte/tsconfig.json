@@ -1,0 +1,8 @@
+{
+  "extends": "@bridge-ui/tsconfig/library.json",
+  "compilerOptions": {
+    "types": ["svelte"]
+  },
+  "include": ["src/**/*.ts", "src/**/*.svelte"],
+  "exclude": ["node_modules", "dist"]
+}

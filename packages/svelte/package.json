@@ -1,0 +1,49 @@
+{
+  "name": "@bridge-ui/svelte",
+  "version": "0.0.1",
+  "description": "Svelte components for BridgeUI — semantic, multi-framework, optional styling",
+  "sideEffects": false,
+  "type": "module",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "svelte": "./src/index.ts",
+      "import": "./src/index.ts",
+      "types": "./src/index.ts"
+    },
+    "./button": {
+      "svelte": "./src/components/button.svelte",
+      "import": "./src/components/button.svelte",
+      "types": "./src/components/button.svelte"
+    },
+    "./dialog": {
+      "svelte": "./src/components/dialog.svelte",
+      "import": "./src/components/dialog.svelte",
+      "types": "./src/components/dialog.svelte"
+    }
+  },
+  "scripts": {
+    "build": "svelte-package -i src",
+    "typecheck": "svelte-check --tsconfig ./tsconfig.json",
+    "lint": "eslint src",
+    "clean": "rimraf dist"
+  },
+  "peerDependencies": {
+    "svelte": ">=5.0.0"
+  },
+  "dependencies": {
+    "@ark-ui/svelte": "5.19.0",
+    "@bridge-ui/core": "workspace:*",
+    "@bridge-ui/utils": "workspace:*"
+  },
+  "devDependencies": {
+    "@bridge-ui/tsconfig": "workspace:*",
+    "@sveltejs/package": "^2.5.7",
+    "rimraf": "^5.0.5",
+    "svelte": "^5.53.6",
+    "svelte-check": "^4.4.4",
+    "typescript": "^5.4.3"
+  }
+}
