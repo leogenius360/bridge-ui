@@ -53,19 +53,12 @@
   --bui-color-warning-600: #d97706;
   --bui-color-warning-700: #b45309;
 
-  /* ── Color scale: destructive ─────────────────────────── */
-  --bui-color-destructive-50: #fef2f2;
-  --bui-color-destructive-100: #fee2e2;
-  --bui-color-destructive-500: #ef4444;
-  --bui-color-destructive-600: #dc2626;
-  --bui-color-destructive-700: #b91c1c;
-
-  /* ── Color scale: info ────────────────────────────────── */
-  --bui-color-info-50: #ecfeff;
-  --bui-color-info-100: #cffafe;
-  --bui-color-info-500: #06b6d4;
-  --bui-color-info-600: #0891b2;
-  --bui-color-info-700: #0e7490;
+  /* ── Color scale: danger ────────────────────────────── */
+  --bui-color-danger-50: #fef2f2;
+  --bui-color-danger-100: #fee2e2;
+  --bui-color-danger-500: #ef4444;
+  --bui-color-danger-600: #dc2626;
+  --bui-color-danger-700: #b91c1c;
 
   /* ── Semantic tokens ──────────────────────────────────── */
   --bui-bg: var(--bui-color-neutral-50);
@@ -74,7 +67,7 @@
   --bui-fg-muted: var(--bui-color-neutral-500);
   --bui-border: var(--bui-color-neutral-200);
 
-  /* Intent tokens */
+  /* Color tokens */
   --bui-color-default-bg: var(--bui-color-neutral-100);
   --bui-color-default-fg: var(--bui-color-neutral-800);
   --bui-color-default-border: var(--bui-color-neutral-300);
@@ -90,10 +83,10 @@
   --bui-color-secondary-border: var(--bui-color-secondary-600);
   --bui-color-secondary-hover-bg: var(--bui-color-secondary-700);
 
-  --bui-color-destructive-bg: var(--bui-color-destructive-600);
-  --bui-color-destructive-fg: #ffffff;
-  --bui-color-destructive-border: var(--bui-color-destructive-600);
-  --bui-color-destructive-hover-bg: var(--bui-color-destructive-700);
+  --bui-color-danger-bg: var(--bui-color-danger-600);
+  --bui-color-danger-fg: #ffffff;
+  --bui-color-danger-border: var(--bui-color-danger-600);
+  --bui-color-danger-hover-bg: var(--bui-color-danger-700);
 
   --bui-color-success-bg: var(--bui-color-success-600);
   --bui-color-success-fg: #ffffff;
@@ -104,11 +97,6 @@
   --bui-color-warning-fg: #ffffff;
   --bui-color-warning-border: var(--bui-color-warning-500);
   --bui-color-warning-hover-bg: var(--bui-color-warning-600);
-
-  --bui-color-info-bg: var(--bui-color-info-600);
-  --bui-color-info-fg: #ffffff;
-  --bui-color-info-border: var(--bui-color-info-600);
-  --bui-color-info-hover-bg: var(--bui-color-info-700);
 
   /* ── Spacing ──────────────────────────────────────────── */
   --bui-spacing-xs: 0.25rem;

@@ -12,7 +12,7 @@
   --bui-fg-muted: var(--bui-color-neutral-400);
   --bui-border: var(--bui-color-neutral-700);
 
-  /* Intent tokens — dark */
+  /* Color tokens — dark */
   --bui-color-default-bg: var(--bui-color-neutral-800);
   --bui-color-default-fg: var(--bui-color-neutral-100);
   --bui-color-default-border: var(--bui-color-neutral-600);
@@ -24,17 +24,14 @@
   --bui-color-secondary-bg: var(--bui-color-secondary-500);
   --bui-color-secondary-hover-bg: var(--bui-color-secondary-400);
 
-  --bui-color-destructive-bg: var(--bui-color-destructive-500);
-  --bui-color-destructive-hover-bg: var(--bui-color-destructive-400);
+  --bui-color-danger-bg: var(--bui-color-danger-500);
+  --bui-color-danger-hover-bg: var(--bui-color-danger-400);
 
   --bui-color-success-bg: var(--bui-color-success-500);
   --bui-color-success-hover-bg: var(--bui-color-success-600);
 
   --bui-color-warning-bg: var(--bui-color-warning-500);
   --bui-color-warning-hover-bg: var(--bui-color-warning-400);
-
-  --bui-color-info-bg: var(--bui-color-info-500);
-  --bui-color-info-hover-bg: var(--bui-color-info-400);
 
   /* ── Shadows (darker for dark mode) ─────────────────── */
   --bui-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
@@ -62,7 +59,7 @@
     --bui-color-secondary-bg: var(--bui-color-secondary-500);
     --bui-color-secondary-hover-bg: var(--bui-color-secondary-400);
 
-    --bui-color-destructive-bg: var(--bui-color-destructive-500);
-    --bui-color-destructive-hover-bg: var(--bui-color-destructive-400);
+    --bui-color-danger-bg: var(--bui-color-danger-500);
+    --bui-color-danger-hover-bg: var(--bui-color-danger-400);
   }
 }

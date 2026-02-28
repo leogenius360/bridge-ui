@@ -19,7 +19,7 @@ features:
   - icon: 🎨
     title: Semantic Color API
     details: >
-      Meaningful color-scheme tokens (primary, secondary, destructive, …)
+      Meaningful color-scheme tokens (primary, secondary, danger, …)
       that describe structural purpose rather than raw values.
   - icon: ⚡
     title: Multi-framework

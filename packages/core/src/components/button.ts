@@ -1,4 +1,4 @@
-import type { Color, Size, Variant, Shape, BridgeComponentProps } from "../tokens/index.js";
+import type { Color, Size, Variant, Radius, BridgeComponentProps } from "../tokens/index.js";
 import type { AriaDisabledProps, AriaLabelProps } from "../a11y/index.js";
 
 /**
@@ -8,7 +8,7 @@ export const ButtonSlots = {
   root: "root",
   icon: "icon",
   label: "label",
-  loadingIcon: "loadingIcon",
+  spinner: "spinner",
 } as const;
 
 export type ButtonSlot = (typeof ButtonSlots)[keyof typeof ButtonSlots];
@@ -20,15 +20,17 @@ export const ButtonRecipeKeys = {
   color: "color",
   size: "size",
   variant: "variant",
-  shape: "shape",
-  loading: "loading",
-  disabled: "disabled",
+  radius: "radius",
+  isLoading: "isLoading",
+  isDisabled: "isDisabled",
+  isIconOnly: "isIconOnly",
   fullWidth: "fullWidth",
+  disableAnimation: "disableAnimation",
 } as const;
 
 /**
  * Props contract for the BridgeUI Button component.
- * This is the framework-agnostic specification.
+ * This is the framework-agnostic specification — aligned with HeroUI conventions.
  */
 export interface ButtonProps extends BridgeComponentProps, AriaLabelProps, AriaDisabledProps {
   /** Semantic color scheme */
@@ -37,18 +39,28 @@ export interface ButtonProps extends BridgeComponentProps, AriaLabelProps, AriaD
   variant?: Variant;
   /** Size of the button */
   size?: Size;
-  /** Shape / border-radius style */
-  shape?: Shape;
+  /** Border radius */
+  radius?: Radius;
   /** Whether the button is in a loading state */
-  loading?: boolean;
-  /** Loading label for screen readers */
-  loadingText?: string;
+  isLoading?: boolean;
+  /** Whether the button is disabled */
+  isDisabled?: boolean;
+  /** Whether the button should display as icon-only (square aspect ratio) */
+  isIconOnly?: boolean;
   /** Whether the button should fill its container width */
   fullWidth?: boolean;
-  /** Icon placed before the label */
-  iconBefore?: unknown;
-  /** Icon placed after the label */
-  iconAfter?: unknown;
+  /** Whether to disable ripple effect */
+  disableRipple?: boolean;
+  /** Whether to disable animations */
+  disableAnimation?: boolean;
+  /** Content placed before the label */
+  startContent?: unknown;
+  /** Content placed after the label */
+  endContent?: unknown;
+  /** Custom spinner element */
+  spinner?: unknown;
+  /** Spinner placement when loading */
+  spinnerPlacement?: "start" | "end";
   /** Native button type attribute */
   type?: "button" | "submit" | "reset";
   /** Click handler */
@@ -62,8 +74,13 @@ export const ButtonDefaults: Partial<ButtonProps> = {
   color: "default",
   variant: "solid",
   size: "md",
-  shape: "rounded",
-  loading: false,
+  radius: "md",
+  isLoading: false,
+  isDisabled: false,
+  isIconOnly: false,
   fullWidth: false,
+  disableRipple: false,
+  disableAnimation: false,
+  spinnerPlacement: "start",
   type: "button",
 };

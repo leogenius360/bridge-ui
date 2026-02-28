@@ -1,5 +1,5 @@
 // Types + contracts
-export type { Color, Size, Variant, Shape, BridgeComponentProps } from "./tokens/index.js";
+export type { Color, Size, Variant, Radius, BridgeComponentProps } from "./tokens/index.js";
 
 // A11y helpers
 export type {

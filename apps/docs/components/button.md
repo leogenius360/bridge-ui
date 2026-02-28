@@ -1,6 +1,6 @@
 # Button
 
-The `Button` component supports semantic colors, visual variants, sizes, shapes, loading state, and icons.
+The `Button` component supports semantic colors, visual variants, sizes, radius, loading state, and start/end content — matching HeroUI conventions.
 
 ## Import
 
@@ -30,11 +30,17 @@ import { buttonRecipe } from "@bridge-ui/styles/recipes";
 | `color` | `Color` | `"default"` | Semantic color scheme |
 | `variant` | `Variant` | `"solid"` | Visual style |
 | `size` | `Size` | `"md"` | Button size |
-| `shape` | `Shape` | `"rounded"` | Border radius shape |
-| `loading` | `boolean` | `false` | Show loading state |
-| `loadingText` | `string` | — | Screen reader text during loading |
+| `radius` | `Radius` | `"md"` | Border radius |
+| `isLoading` | `boolean` | `false` | Show loading state |
+| `isDisabled` | `boolean` | `false` | Disable the button |
+| `isIconOnly` | `boolean` | `false` | Icon-only mode (square aspect) |
 | `fullWidth` | `boolean` | `false` | Fill container width |
-| `disabled` | `boolean` | `false` | Disable the button |
+| `disableRipple` | `boolean` | `false` | Disable ripple effect |
+| `disableAnimation` | `boolean` | `false` | Disable animations |
+| `startContent` | `ReactNode` | — | Content before the label |
+| `endContent` | `ReactNode` | — | Content after the label |
+| `spinner` | `ReactNode` | — | Custom spinner element |
+| `spinnerPlacement` | `"start" \| "end"` | `"start"` | Spinner position |
 | `type` | `"button" \| "submit" \| "reset"` | `"button"` | Native button type |
 | `recipe` | `(props?) => string` | — | Class recipe (opt-in styling) |
 | `className` | `string` | — | Additional classes |
@@ -45,37 +51,46 @@ import { buttonRecipe } from "@bridge-ui/styles/recipes";
 <Button color="default" recipe={buttonRecipe}>Default</Button>
 <Button color="primary" recipe={buttonRecipe}>Primary</Button>
 <Button color="secondary" recipe={buttonRecipe}>Secondary</Button>
-<Button color="destructive" recipe={buttonRecipe}>Destructive</Button>
+<Button color="danger" recipe={buttonRecipe}>Danger</Button>
 <Button color="success" recipe={buttonRecipe}>Success</Button>
 <Button color="warning" recipe={buttonRecipe}>Warning</Button>
-<Button color="info" recipe={buttonRecipe}>Info</Button>
 ```
 
 ## Variants
 
 ```tsx
 <Button color="primary" variant="solid" recipe={buttonRecipe}>Solid</Button>
-<Button color="primary" variant="outline" recipe={buttonRecipe}>Outline</Button>
+<Button color="primary" variant="bordered" recipe={buttonRecipe}>Bordered</Button>
+<Button color="primary" variant="light" recipe={buttonRecipe}>Light</Button>
+<Button color="primary" variant="flat" recipe={buttonRecipe}>Flat</Button>
+<Button color="primary" variant="faded" recipe={buttonRecipe}>Faded</Button>
+<Button color="primary" variant="shadow" recipe={buttonRecipe}>Shadow</Button>
 <Button color="primary" variant="ghost" recipe={buttonRecipe}>Ghost</Button>
-<Button color="primary" variant="subtle" recipe={buttonRecipe}>Subtle</Button>
-<Button color="primary" variant="link" recipe={buttonRecipe}>Link</Button>
 ```
 
 ## Sizes
 
 ```tsx
-<Button size="xs" recipe={buttonRecipe}>XS</Button>
 <Button size="sm" recipe={buttonRecipe}>SM</Button>
 <Button size="md" recipe={buttonRecipe}>MD</Button>
 <Button size="lg" recipe={buttonRecipe}>LG</Button>
-<Button size="xl" recipe={buttonRecipe}>XL</Button>
+```
+
+## Radius
+
+```tsx
+<Button radius="none" recipe={buttonRecipe}>None</Button>
+<Button radius="sm" recipe={buttonRecipe}>SM</Button>
+<Button radius="md" recipe={buttonRecipe}>MD</Button>
+<Button radius="lg" recipe={buttonRecipe}>LG</Button>
+<Button radius="full" recipe={buttonRecipe}>Full</Button>
 ```
 
 ## Loading
 
 ```tsx
-<Button loading recipe={buttonRecipe}>Loading…</Button>
-<Button loading loadingText="Saving…" recipe={buttonRecipe}>Save</Button>
+<Button isLoading recipe={buttonRecipe}>Loading…</Button>
+<Button isLoading spinnerPlacement="end" recipe={buttonRecipe}>Saving…</Button>
 ```
 
 ## Unstyled (BYO)

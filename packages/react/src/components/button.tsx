@@ -23,8 +23,8 @@ export type { ButtonProps };
  * ```
  */
 export interface ReactButtonProps
-  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "children" | "color">,
-    Omit<ButtonProps, "onClick" | "aria-disabled"> {
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "children" | "color" | "disabled">,
+    Omit<ButtonProps, "onClick" | "aria-disabled" | "disabled"> {
   children?: React.ReactNode;
   /**
    * Optional class recipe from `@bridge-ui/styles/recipes`.
@@ -40,14 +40,18 @@ export const Button = React.forwardRef<HTMLButtonElement, ReactButtonProps>(
       color = ButtonDefaults.color ?? "default",
       variant = ButtonDefaults.variant,
       size = ButtonDefaults.size,
-      shape = ButtonDefaults.shape,
-      loading = ButtonDefaults.loading,
+      radius = ButtonDefaults.radius,
+      isLoading = ButtonDefaults.isLoading,
+      isDisabled: isDisabledProp = ButtonDefaults.isDisabled,
+      isIconOnly = ButtonDefaults.isIconOnly,
       fullWidth = ButtonDefaults.fullWidth,
+      disableRipple = ButtonDefaults.disableRipple,
+      disableAnimation = ButtonDefaults.disableAnimation,
       type = ButtonDefaults.type,
-      disabled,
-      loadingText,
-      iconBefore,
-      iconAfter,
+      startContent,
+      endContent,
+      spinner,
+      spinnerPlacement = ButtonDefaults.spinnerPlacement,
       className,
       recipe,
       ...htmlProps
@@ -55,10 +59,10 @@ export const Button = React.forwardRef<HTMLButtonElement, ReactButtonProps>(
     ref,
   ) => {
     const recipeClass = recipe
-      ? recipe({ color, variant, size, shape, loading, disabled: !!disabled, fullWidth })
+      ? recipe({ color, variant, size, radius, isLoading, isDisabled: !!isDisabledProp, isIconOnly, fullWidth, disableAnimation })
       : "";
 
-    const isDisabled = disabled || loading;
+    const isDisabled = isDisabledProp || isLoading;
 
     return (
       <button
@@ -66,30 +70,33 @@ export const Button = React.forwardRef<HTMLButtonElement, ReactButtonProps>(
         type={type}
         disabled={isDisabled}
         aria-disabled={isDisabled}
-        aria-busy={loading}
+        aria-busy={isLoading}
         className={cn(recipeClass, className)}
         {...htmlProps}
       >
-        {loading ? (
-          <>
-            <span aria-hidden="true" className="bui-loading-icon" />
-            {loadingText ?? children}
-          </>
-        ) : (
-          <>
-            {iconBefore ? (
-              <span aria-hidden="true" className="bui-icon bui-icon-before">
-                {iconBefore as React.ReactNode}
-              </span>
-            ) : null}
-            {children}
-            {iconAfter ? (
-              <span aria-hidden="true" className="bui-icon bui-icon-after">
-                {iconAfter as React.ReactNode}
-              </span>
-            ) : null}
-          </>
-        )}
+        {isLoading && spinnerPlacement === "start" ? (
+          spinner ? (
+            <span aria-hidden="true">{spinner as React.ReactNode}</span>
+          ) : (
+            <span aria-hidden="true" className="bui-spinner" />
+          )
+        ) : startContent ? (
+          <span aria-hidden="true" className="bui-icon bui-start-content">
+            {startContent as React.ReactNode}
+          </span>
+        ) : null}
+        {children}
+        {isLoading && spinnerPlacement === "end" ? (
+          spinner ? (
+            <span aria-hidden="true">{spinner as React.ReactNode}</span>
+          ) : (
+            <span aria-hidden="true" className="bui-spinner" />
+          )
+        ) : endContent ? (
+          <span aria-hidden="true" className="bui-icon bui-end-content">
+            {endContent as React.ReactNode}
+          </span>
+        ) : null}
       </button>
     );
   },

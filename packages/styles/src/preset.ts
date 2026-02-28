@@ -45,11 +45,11 @@ export const bridgeUIPreset: Config = {
           border: "var(--bui-color-secondary-border)",
           hover: "var(--bui-color-secondary-hover-bg)",
         },
-        destructive: {
-          DEFAULT: "var(--bui-color-destructive-bg)",
-          fg: "var(--bui-color-destructive-fg)",
-          border: "var(--bui-color-destructive-border)",
-          hover: "var(--bui-color-destructive-hover-bg)",
+        danger: {
+          DEFAULT: "var(--bui-color-danger-bg)",
+          fg: "var(--bui-color-danger-fg)",
+          border: "var(--bui-color-danger-border)",
+          hover: "var(--bui-color-danger-hover-bg)",
         },
         success: {
           DEFAULT: "var(--bui-color-success-bg)",
@@ -62,12 +62,6 @@ export const bridgeUIPreset: Config = {
           fg: "var(--bui-color-warning-fg)",
           border: "var(--bui-color-warning-border)",
           hover: "var(--bui-color-warning-hover-bg)",
-        },
-        info: {
-          DEFAULT: "var(--bui-color-info-bg)",
-          fg: "var(--bui-color-info-fg)",
-          border: "var(--bui-color-info-border)",
-          hover: "var(--bui-color-info-hover-bg)",
         },
       },
       fontFamily: {

@@ -26,7 +26,7 @@ Pass a `recipe` (or `slotRecipe`) to opt into library styling:
 import { Button } from "@bridge-ui/react";
 import { buttonRecipe } from "@bridge-ui/styles/recipes";
 
-<Button color="primary" variant="outline" size="lg" recipe={buttonRecipe}>
+<Button color="primary" variant="bordered" size="lg" recipe={buttonRecipe}>
   Styled button
 </Button>
 ```

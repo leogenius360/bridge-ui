@@ -14,77 +14,85 @@ const buttonColorVariants: Record<string, Record<string, string>> = {
     default: "bg-[var(--bui-color-default-bg)] text-[var(--bui-color-default-fg)] hover:bg-[var(--bui-color-default-hover-bg)] border border-[var(--bui-color-default-border)]",
     primary: "bg-[var(--bui-color-primary-bg)] text-[var(--bui-color-primary-fg)] hover:bg-[var(--bui-color-primary-hover-bg)]",
     secondary: "bg-[var(--bui-color-secondary-bg)] text-[var(--bui-color-secondary-fg)] hover:bg-[var(--bui-color-secondary-hover-bg)]",
-    destructive: "bg-[var(--bui-color-destructive-bg)] text-[var(--bui-color-destructive-fg)] hover:bg-[var(--bui-color-destructive-hover-bg)]",
+    danger: "bg-[var(--bui-color-danger-bg)] text-[var(--bui-color-danger-fg)] hover:bg-[var(--bui-color-danger-hover-bg)]",
     success: "bg-[var(--bui-color-success-bg)] text-[var(--bui-color-success-fg)] hover:bg-[var(--bui-color-success-hover-bg)]",
     warning: "bg-[var(--bui-color-warning-bg)] text-[var(--bui-color-warning-fg)] hover:bg-[var(--bui-color-warning-hover-bg)]",
-    info: "bg-[var(--bui-color-info-bg)] text-[var(--bui-color-info-fg)] hover:bg-[var(--bui-color-info-hover-bg)]",
-    surface: "bg-[var(--bui-bg-surface)] text-[var(--bui-fg)] hover:bg-[var(--bui-bg)] border border-[var(--bui-border)]",
   },
-  outline: {
-    default: "border border-[var(--bui-color-default-border)] text-[var(--bui-color-default-fg)] hover:bg-[var(--bui-color-default-hover-bg)]",
-    primary: "border border-[var(--bui-color-primary-border)] text-[var(--bui-color-primary-bg)] hover:bg-[var(--bui-color-primary-50)]",
-    secondary: "border border-[var(--bui-color-secondary-border)] text-[var(--bui-color-secondary-bg)] hover:bg-[var(--bui-color-secondary-50)]",
-    destructive: "border border-[var(--bui-color-destructive-border)] text-[var(--bui-color-destructive-bg)] hover:bg-[var(--bui-color-destructive-50)]",
-    success: "border border-[var(--bui-color-success-border)] text-[var(--bui-color-success-bg)] hover:bg-[var(--bui-color-success-50)]",
-    warning: "border border-[var(--bui-color-warning-border)] text-[var(--bui-color-warning-bg)] hover:bg-[var(--bui-color-warning-50)]",
-    info: "border border-[var(--bui-color-info-border)] text-[var(--bui-color-info-bg)] hover:bg-[var(--bui-color-info-50)]",
-    surface: "border border-[var(--bui-border)] text-[var(--bui-fg)] hover:bg-[var(--bui-bg)]",
+  bordered: {
+    default: "border border-[var(--bui-color-default-border)] text-[var(--bui-color-default-fg)] bg-transparent hover:bg-[var(--bui-color-default-hover-bg)]",
+    primary: "border border-[var(--bui-color-primary-border)] text-[var(--bui-color-primary-bg)] bg-transparent hover:bg-[var(--bui-color-primary-50)]",
+    secondary: "border border-[var(--bui-color-secondary-border)] text-[var(--bui-color-secondary-bg)] bg-transparent hover:bg-[var(--bui-color-secondary-50)]",
+    danger: "border border-[var(--bui-color-danger-border)] text-[var(--bui-color-danger-bg)] bg-transparent hover:bg-[var(--bui-color-danger-50)]",
+    success: "border border-[var(--bui-color-success-border)] text-[var(--bui-color-success-bg)] bg-transparent hover:bg-[var(--bui-color-success-50)]",
+    warning: "border border-[var(--bui-color-warning-border)] text-[var(--bui-color-warning-bg)] bg-transparent hover:bg-[var(--bui-color-warning-50)]",
   },
-  ghost: {
-    default: "text-[var(--bui-color-default-fg)] hover:bg-[var(--bui-color-default-hover-bg)]",
-    primary: "text-[var(--bui-color-primary-bg)] hover:bg-[var(--bui-color-primary-50)]",
-    secondary: "text-[var(--bui-color-secondary-bg)] hover:bg-[var(--bui-color-secondary-50)]",
-    destructive: "text-[var(--bui-color-destructive-bg)] hover:bg-[var(--bui-color-destructive-50)]",
-    success: "text-[var(--bui-color-success-bg)] hover:bg-[var(--bui-color-success-50)]",
-    warning: "text-[var(--bui-color-warning-bg)] hover:bg-[var(--bui-color-warning-50)]",
-    info: "text-[var(--bui-color-info-bg)] hover:bg-[var(--bui-color-info-50)]",
-    surface: "text-[var(--bui-fg)] hover:bg-[var(--bui-bg)]",
+  light: {
+    default: "text-[var(--bui-color-default-fg)] bg-transparent hover:bg-[var(--bui-color-default-hover-bg)]",
+    primary: "text-[var(--bui-color-primary-bg)] bg-transparent hover:bg-[var(--bui-color-primary-50)]",
+    secondary: "text-[var(--bui-color-secondary-bg)] bg-transparent hover:bg-[var(--bui-color-secondary-50)]",
+    danger: "text-[var(--bui-color-danger-bg)] bg-transparent hover:bg-[var(--bui-color-danger-50)]",
+    success: "text-[var(--bui-color-success-bg)] bg-transparent hover:bg-[var(--bui-color-success-50)]",
+    warning: "text-[var(--bui-color-warning-bg)] bg-transparent hover:bg-[var(--bui-color-warning-50)]",
   },
-  subtle: {
+  flat: {
     default: "bg-[var(--bui-color-default-bg)] text-[var(--bui-color-default-fg)]",
     primary: "bg-[var(--bui-color-primary-100)] text-[var(--bui-color-primary-800)]",
     secondary: "bg-[var(--bui-color-secondary-100)] text-[var(--bui-color-secondary-800)]",
-    destructive: "bg-[var(--bui-color-destructive-100)] text-[var(--bui-color-destructive-800)]",
+    danger: "bg-[var(--bui-color-danger-100)] text-[var(--bui-color-danger-700)]",
     success: "bg-[var(--bui-color-success-100)] text-[var(--bui-color-success-700)]",
     warning: "bg-[var(--bui-color-warning-100)] text-[var(--bui-color-warning-700)]",
-    info: "bg-[var(--bui-color-info-100)] text-[var(--bui-color-info-700)]",
-    surface: "bg-[var(--bui-bg)] text-[var(--bui-fg)]",
   },
-  link: {
-    default: "text-[var(--bui-color-default-fg)] underline-offset-4 hover:underline",
-    primary: "text-[var(--bui-color-primary-bg)] underline-offset-4 hover:underline",
-    secondary: "text-[var(--bui-color-secondary-bg)] underline-offset-4 hover:underline",
-    destructive: "text-[var(--bui-color-destructive-bg)] underline-offset-4 hover:underline",
-    success: "text-[var(--bui-color-success-bg)] underline-offset-4 hover:underline",
-    warning: "text-[var(--bui-color-warning-bg)] underline-offset-4 hover:underline",
-    info: "text-[var(--bui-color-info-bg)] underline-offset-4 hover:underline",
-    surface: "text-[var(--bui-fg)] underline-offset-4 hover:underline",
+  faded: {
+    default: "border border-[var(--bui-color-default-border)] bg-[var(--bui-color-default-bg)] text-[var(--bui-color-default-fg)]",
+    primary: "border border-[var(--bui-color-default-border)] bg-[var(--bui-color-default-bg)] text-[var(--bui-color-primary-bg)]",
+    secondary: "border border-[var(--bui-color-default-border)] bg-[var(--bui-color-default-bg)] text-[var(--bui-color-secondary-bg)]",
+    danger: "border border-[var(--bui-color-default-border)] bg-[var(--bui-color-default-bg)] text-[var(--bui-color-danger-bg)]",
+    success: "border border-[var(--bui-color-default-border)] bg-[var(--bui-color-default-bg)] text-[var(--bui-color-success-bg)]",
+    warning: "border border-[var(--bui-color-default-border)] bg-[var(--bui-color-default-bg)] text-[var(--bui-color-warning-bg)]",
+  },
+  shadow: {
+    default: "bg-[var(--bui-color-default-bg)] text-[var(--bui-color-default-fg)] shadow-[var(--bui-shadow-md)] hover:shadow-[var(--bui-shadow-lg)]",
+    primary: "bg-[var(--bui-color-primary-bg)] text-[var(--bui-color-primary-fg)] shadow-[var(--bui-shadow-md)] hover:shadow-[var(--bui-shadow-lg)]",
+    secondary: "bg-[var(--bui-color-secondary-bg)] text-[var(--bui-color-secondary-fg)] shadow-[var(--bui-shadow-md)] hover:shadow-[var(--bui-shadow-lg)]",
+    danger: "bg-[var(--bui-color-danger-bg)] text-[var(--bui-color-danger-fg)] shadow-[var(--bui-shadow-md)] hover:shadow-[var(--bui-shadow-lg)]",
+    success: "bg-[var(--bui-color-success-bg)] text-[var(--bui-color-success-fg)] shadow-[var(--bui-shadow-md)] hover:shadow-[var(--bui-shadow-lg)]",
+    warning: "bg-[var(--bui-color-warning-bg)] text-[var(--bui-color-warning-fg)] shadow-[var(--bui-shadow-md)] hover:shadow-[var(--bui-shadow-lg)]",
+  },
+  ghost: {
+    default: "border border-[var(--bui-color-default-border)] text-[var(--bui-color-default-fg)] bg-transparent hover:bg-[var(--bui-color-default-bg)]",
+    primary: "border border-[var(--bui-color-primary-border)] text-[var(--bui-color-primary-bg)] bg-transparent hover:bg-[var(--bui-color-primary-bg)] hover:text-[var(--bui-color-primary-fg)]",
+    secondary: "border border-[var(--bui-color-secondary-border)] text-[var(--bui-color-secondary-bg)] bg-transparent hover:bg-[var(--bui-color-secondary-bg)] hover:text-[var(--bui-color-secondary-fg)]",
+    danger: "border border-[var(--bui-color-danger-border)] text-[var(--bui-color-danger-bg)] bg-transparent hover:bg-[var(--bui-color-danger-bg)] hover:text-[var(--bui-color-danger-fg)]",
+    success: "border border-[var(--bui-color-success-border)] text-[var(--bui-color-success-bg)] bg-transparent hover:bg-[var(--bui-color-success-bg)] hover:text-[var(--bui-color-success-fg)]",
+    warning: "border border-[var(--bui-color-warning-border)] text-[var(--bui-color-warning-bg)] bg-transparent hover:bg-[var(--bui-color-warning-bg)] hover:text-[var(--bui-color-warning-fg)]",
   },
 };
 
 const buttonSizeClasses: Record<string, string> = {
-  xs: "h-7 px-2 text-xs rounded-[var(--bui-radius-sm)]",
-  sm: "h-8 px-3 text-sm rounded-[var(--bui-radius-md)]",
-  md: "h-9 px-4 text-sm rounded-[var(--bui-radius-md)]",
-  lg: "h-10 px-6 text-base rounded-[var(--bui-radius-md)]",
-  xl: "h-12 px-8 text-lg rounded-[var(--bui-radius-lg)]",
+  sm: "h-8 px-3 text-sm gap-2 rounded-[var(--bui-radius-sm)]",
+  md: "h-10 px-4 text-sm gap-2 rounded-[var(--bui-radius-md)]",
+  lg: "h-12 px-6 text-base gap-3 rounded-[var(--bui-radius-lg)]",
 };
 
-const buttonShapeOverrides: Record<string, string> = {
-  square: "rounded-none",
-  rounded: "",
-  pill: "rounded-[var(--bui-radius-full)]",
-  circle: "rounded-[var(--bui-radius-full)] aspect-square px-0",
+const buttonRadiusOverrides: Record<string, string> = {
+  none: "rounded-none",
+  sm: "rounded-[var(--bui-radius-sm)]",
+  md: "rounded-[var(--bui-radius-md)]",
+  lg: "rounded-[var(--bui-radius-lg)]",
+  full: "rounded-[var(--bui-radius-full)]",
 };
 
 export const buttonRecipe: ClassRecipeFn<ButtonRecipeProps> = (props = {} as ButtonRecipeProps) => {
-  const { color = "default", variant = "solid", size = "md", shape = "rounded", fullWidth = false } = props;
+  const { color = "default", variant = "solid", size = "md", radius, fullWidth = false, isIconOnly = false, isDisabled = false, disableAnimation = false } = props;
 
   const colorClass = buttonColorVariants[variant]?.[color] ?? buttonColorVariants["solid"]["default"];
   const sizeClass = buttonSizeClasses[size] ?? buttonSizeClasses["md"];
-  const shapeClass = buttonShapeOverrides[shape] ?? "";
+  const radiusClass = radius ? (buttonRadiusOverrides[radius] ?? "") : "";
+  const iconOnlyClass = isIconOnly ? "px-0 aspect-square" : "";
+  const disabledClass = isDisabled ? "opacity-50 pointer-events-none" : "";
+  const animationClass = disableAnimation ? "" : "transition-transform-colors-opacity";
 
-  return cn(buttonBase, colorClass, sizeClass, shapeClass, fullWidth ? "w-full" : "");
+  return cn(buttonBase, colorClass, sizeClass, radiusClass, fullWidth ? "w-full" : "", iconOnlyClass, disabledClass, animationClass);
 };
 
 export const buttonSlotRecipe: SlotRecipeFn<ButtonRecipeProps, ButtonSlot> = (props = {} as ButtonRecipeProps) => {
@@ -93,7 +101,7 @@ export const buttonSlotRecipe: SlotRecipeFn<ButtonRecipeProps, ButtonSlot> = (pr
     root,
     icon: "shrink-0",
     label: "",
-    loadingIcon: "animate-spin",
+    spinner: "animate-spin",
   };
 };
 

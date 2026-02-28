@@ -4,9 +4,10 @@
 
   let dialogOpen = false;
 
-  const colors = ["default", "primary", "secondary", "destructive", "success", "warning", "info"] as const;
-  const variants = ["solid", "outline", "ghost", "subtle", "link"] as const;
-  const sizes = ["xs", "sm", "md", "lg", "xl"] as const;
+  const colors = ["default", "primary", "secondary", "danger", "success", "warning"] as const;
+  const variants = ["solid", "bordered", "light", "flat", "faded", "shadow", "ghost"] as const;
+  const sizes = ["sm", "md", "lg"] as const;
+  const radii = ["none", "sm", "md", "lg", "full"] as const;
 </script>
 
 <div class="min-h-screen bg-bui-bg text-bui-fg p-8">
@@ -45,12 +46,22 @@
     </div>
   </section>
 
+  <!-- Buttons — radius -->
+  <section class="mb-10">
+    <h2 class="text-xl font-semibold mb-4">Button — radius</h2>
+    <div class="flex flex-wrap items-center gap-3">
+      {#each radii as radius}
+        <Button color="primary" {radius} recipe={buttonRecipe}>{radius}</Button>
+      {/each}
+    </div>
+  </section>
+
   <!-- Buttons — loading & disabled -->
   <section class="mb-10">
     <h2 class="text-xl font-semibold mb-4">Button — loading & disabled</h2>
     <div class="flex flex-wrap gap-3">
-      <Button color="primary" loading={true} recipe={buttonRecipe}>Loading…</Button>
-      <Button color="primary" disabled={true} recipe={buttonRecipe}>Disabled</Button>
+      <Button color="primary" isLoading={true} recipe={buttonRecipe}>Loading…</Button>
+      <Button color="primary" isDisabled={true} recipe={buttonRecipe}>Disabled</Button>
     </div>
   </section>
 

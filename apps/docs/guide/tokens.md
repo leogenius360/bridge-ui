@@ -31,7 +31,7 @@ All tokens are prefixed with `--bui-` to avoid conflicts.
 | `--bui-color-primary-border` | Border color for primary color |
 | `--bui-color-primary-hover-bg` | Hover background for primary color |
 
-Same pattern for: `default`, `secondary`, `destructive`, `success`, `warning`, `info`.
+Same pattern for: `default`, `secondary`, `danger`, `success`, `warning`.
 
 ### Global semantic tokens
 
@@ -58,7 +58,7 @@ Same pattern for: `default`, `secondary`, `destructive`, `success`, `warning`, `
 ## TypeScript helpers
 
 ```ts
-import { token, IntentTokenNames } from "@bridge-ui/tokens";
+import { token, ColorTokenNames } from "@bridge-ui/tokens";
 
 // Get a CSS variable reference
 token.ref("color-primary-bg"); // "var(--bui-color-primary-bg)"

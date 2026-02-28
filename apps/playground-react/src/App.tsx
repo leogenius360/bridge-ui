@@ -21,10 +21,9 @@ export default function App() {
               "default",
               "primary",
               "secondary",
-              "destructive",
+              "danger",
               "success",
               "warning",
-              "info",
             ] as const
           ).map((color) => (
             <Button key={color} color={color} recipe={buttonRecipe}>
@@ -37,7 +36,7 @@ export default function App() {
       <section className="mb-10">
         <h2 className="text-xl font-semibold mb-4">Button — variants</h2>
         <div className="flex flex-wrap gap-3">
-          {(["solid", "outline", "ghost", "subtle", "link"] as const).map((variant) => (
+          {(["solid", "bordered", "light", "flat", "faded", "shadow", "ghost"] as const).map((variant) => (
             <Button key={variant} color="primary" variant={variant} recipe={buttonRecipe}>
               {variant}
             </Button>
@@ -48,7 +47,7 @@ export default function App() {
       <section className="mb-10">
         <h2 className="text-xl font-semibold mb-4">Button — sizes</h2>
         <div className="flex flex-wrap items-center gap-3">
-          {(["xs", "sm", "md", "lg", "xl"] as const).map((size) => (
+          {(["sm", "md", "lg"] as const).map((size) => (
             <Button key={size} color="primary" size={size} recipe={buttonRecipe}>
               {size}
             </Button>
@@ -57,12 +56,23 @@ export default function App() {
       </section>
 
       <section className="mb-10">
+        <h2 className="text-xl font-semibold mb-4">Button — radius</h2>
+        <div className="flex flex-wrap items-center gap-3">
+          {(["none", "sm", "md", "lg", "full"] as const).map((radius) => (
+            <Button key={radius} color="primary" radius={radius} recipe={buttonRecipe}>
+              {radius}
+            </Button>
+          ))}
+        </div>
+      </section>
+
+      <section className="mb-10">
         <h2 className="text-xl font-semibold mb-4">Button — loading & disabled</h2>
         <div className="flex flex-wrap gap-3">
-          <Button color="primary" loading recipe={buttonRecipe}>
+          <Button color="primary" isLoading recipe={buttonRecipe}>
             Loading…
           </Button>
-          <Button color="primary" disabled recipe={buttonRecipe}>
+          <Button color="primary" isDisabled recipe={buttonRecipe}>
             Disabled
           </Button>
         </div>

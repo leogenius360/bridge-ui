@@ -8,11 +8,9 @@ export const ColorTokenNames = [
   "default",
   "primary",
   "secondary",
-  "surface",
-  "destructive",
   "success",
   "warning",
-  "info",
+  "danger",
 ] as const;
 
 export type ColorTokenName = (typeof ColorTokenNames)[number];

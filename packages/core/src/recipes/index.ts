@@ -32,10 +32,12 @@ export interface ButtonRecipeProps {
   color: Color;
   size: Size;
   variant: Variant;
-  shape: "square" | "rounded" | "pill" | "circle";
-  loading: boolean;
-  disabled: boolean;
+  radius: "none" | "sm" | "md" | "lg" | "full";
+  isLoading: boolean;
+  isDisabled: boolean;
+  isIconOnly: boolean;
   fullWidth: boolean;
+  disableAnimation: boolean;
 }
 
 /**

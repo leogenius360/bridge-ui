@@ -6,26 +6,24 @@ export type Color =
   | "default"
   | "primary"
   | "secondary"
-  | "surface"
-  | "destructive"
   | "success"
   | "warning"
-  | "info";
+  | "danger";
 
 /**
  * BridgeUI size values.
  */
-export type Size = "xs" | "sm" | "md" | "lg" | "xl";
+export type Size = "sm" | "md" | "lg";
 
 /**
  * BridgeUI visual appearance/variant values.
  */
-export type Variant = "solid" | "outline" | "ghost" | "subtle" | "link";
+export type Variant = "solid" | "bordered" | "light" | "flat" | "faded" | "shadow" | "ghost";
 
 /**
- * BridgeUI shape values.
+ * BridgeUI radius values.
  */
-export type Shape = "square" | "rounded" | "pill" | "circle";
+export type Radius = "none" | "sm" | "md" | "lg" | "full";
 
 /**
  * Common props shared by all BridgeUI components.

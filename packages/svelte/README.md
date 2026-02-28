@@ -13,7 +13,7 @@ pnpm add @bridge-ui/styles @bridge-ui/tokens
 
 ## Components
 
-- `Button` — Semantic button with colors, variants, sizes, loading state
+- `Button` — Semantic button with colors, variants, sizes, radius, loading state
 - `Dialog` — Accessible modal dialog with backdrop, named slots
 
 ## Usage

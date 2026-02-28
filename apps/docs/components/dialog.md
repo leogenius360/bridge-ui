@@ -65,7 +65,7 @@ function App() {
 <Dialog
   slotRecipe={dialogSlotRecipe}
   classes={{
-    title: "text-destructive",
+    title: "text-danger",
     content: "max-w-2xl",
   }}
   title="Custom styled"
