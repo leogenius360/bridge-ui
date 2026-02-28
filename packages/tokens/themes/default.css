@@ -134,8 +134,8 @@
 
   /* ── Border radius ────────────────────────────────────── */
   --bui-radius-none: 0;
-  --bui-radius-xs: 0.0625rem;
-  --bui-radius-sm: 0.125rem;
+  --bui-radius-xs: 0.125rem;
+  --bui-radius-sm: 0.25rem;
   --bui-radius-md: 0.375rem;
   --bui-radius-lg: 0.5rem;
   --bui-radius-xl: 0.75rem;
