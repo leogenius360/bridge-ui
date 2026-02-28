@@ -17,9 +17,9 @@ hero:
 
 features:
   - icon: 🎨
-    title: Semantic Design API
+    title: Semantic Color API
     details: >
-      Meaningful intent-based tokens (primary, secondary, destructive, …)
+      Meaningful color-scheme tokens (primary, secondary, destructive, …)
       that describe structural purpose rather than raw values.
   - icon: ⚡
     title: Multi-framework

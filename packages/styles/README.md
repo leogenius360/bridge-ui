@@ -28,7 +28,7 @@ export default { presets: [bridgeUIPreset], content: ["./src/**/*.{ts,tsx,svelte
 import { buttonRecipe, dialogSlotRecipe } from "@bridge-ui/styles/recipes";
 
 // Pass to the component's recipe prop
-<Button intent="primary" recipe={buttonRecipe}>Click</Button>
+<Button color="primary" recipe={buttonRecipe}>Click</Button>
 ```
 
 ## Sideeffects

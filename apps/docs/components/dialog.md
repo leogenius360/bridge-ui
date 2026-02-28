@@ -23,7 +23,7 @@ function App() {
 
   return (
     <>
-      <Button intent="primary" recipe={buttonRecipe} onClick={onOpen}>
+      <Button color="primary" recipe={buttonRecipe} onClick={onOpen}>
         Open Dialog
       </Button>
       <Dialog

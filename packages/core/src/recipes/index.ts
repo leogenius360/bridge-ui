@@ -1,4 +1,4 @@
-import type { Intent, Size, Variant } from "../tokens/index.js";
+import type { Color, Size, Variant } from "../tokens/index.js";
 
 /**
  * A recipe is a function that accepts variant props and returns
@@ -29,7 +29,7 @@ export type VariantMap<K extends string, V extends string> = Record<K, Record<V,
  * Button recipe variant props.
  */
 export interface ButtonRecipeProps {
-  intent: Intent;
+  color: Color;
   size: Size;
   variant: Variant;
   shape: "square" | "rounded" | "pill" | "circle";

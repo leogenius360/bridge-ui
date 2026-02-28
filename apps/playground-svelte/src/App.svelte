@@ -4,7 +4,7 @@
 
   let dialogOpen = false;
 
-  const intents = ["default", "primary", "secondary", "destructive", "success", "warning", "info"] as const;
+  const colors = ["default", "primary", "secondary", "destructive", "success", "warning", "info"] as const;
   const variants = ["solid", "outline", "ghost", "subtle", "link"] as const;
   const sizes = ["xs", "sm", "md", "lg", "xl"] as const;
 </script>
@@ -15,12 +15,12 @@
     Semantic component API · Multi-framework · Optional Tailwind styling
   </p>
 
-  <!-- Buttons — intents -->
+  <!-- Buttons — colors -->
   <section class="mb-10">
-    <h2 class="text-xl font-semibold mb-4">Button — intents</h2>
+    <h2 class="text-xl font-semibold mb-4">Button — colors</h2>
     <div class="flex flex-wrap gap-3">
-      {#each intents as intent}
-        <Button {intent} recipe={buttonRecipe}>{intent}</Button>
+      {#each colors as color}
+        <Button {color} recipe={buttonRecipe}>{color}</Button>
       {/each}
     </div>
   </section>
@@ -30,7 +30,7 @@
     <h2 class="text-xl font-semibold mb-4">Button — variants</h2>
     <div class="flex flex-wrap gap-3">
       {#each variants as variant}
-        <Button intent="primary" {variant} recipe={buttonRecipe}>{variant}</Button>
+        <Button color="primary" {variant} recipe={buttonRecipe}>{variant}</Button>
       {/each}
     </div>
   </section>
@@ -40,7 +40,7 @@
     <h2 class="text-xl font-semibold mb-4">Button — sizes</h2>
     <div class="flex flex-wrap items-center gap-3">
       {#each sizes as size}
-        <Button intent="primary" {size} recipe={buttonRecipe}>{size}</Button>
+        <Button color="primary" {size} recipe={buttonRecipe}>{size}</Button>
       {/each}
     </div>
   </section>
@@ -49,8 +49,8 @@
   <section class="mb-10">
     <h2 class="text-xl font-semibold mb-4">Button — loading & disabled</h2>
     <div class="flex flex-wrap gap-3">
-      <Button intent="primary" loading={true} recipe={buttonRecipe}>Loading…</Button>
-      <Button intent="primary" disabled={true} recipe={buttonRecipe}>Disabled</Button>
+      <Button color="primary" loading={true} recipe={buttonRecipe}>Loading…</Button>
+      <Button color="primary" disabled={true} recipe={buttonRecipe}>Disabled</Button>
     </div>
   </section>
 
@@ -65,7 +65,7 @@
   <!-- Dialog -->
   <section class="mb-10">
     <h2 class="text-xl font-semibold mb-4">Dialog</h2>
-    <Button intent="primary" recipe={buttonRecipe} on:click={() => (dialogOpen = true)}>
+    <Button color="primary" recipe={buttonRecipe} on:click={() => (dialogOpen = true)}>
       Open Dialog
     </Button>
     <Dialog
@@ -77,7 +77,7 @@
     >
       <p>Dialog body content goes here.</p>
       <svelte:fragment slot="footer">
-        <Button intent="primary" recipe={buttonRecipe} on:click={() => (dialogOpen = false)}>
+        <Button color="primary" recipe={buttonRecipe} on:click={() => (dialogOpen = false)}>
           Close
         </Button>
       </svelte:fragment>

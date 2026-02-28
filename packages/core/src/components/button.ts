@@ -1,4 +1,4 @@
-import type { Intent, Size, Variant, Shape, BridgeComponentProps } from "../tokens/index.js";
+import type { Color, Size, Variant, Shape, BridgeComponentProps } from "../tokens/index.js";
 import type { AriaDisabledProps, AriaLabelProps } from "../a11y/index.js";
 
 /**
@@ -17,7 +17,7 @@ export type ButtonSlot = (typeof ButtonSlots)[keyof typeof ButtonSlots];
  * Variant recipe keys for the Button component.
  */
 export const ButtonRecipeKeys = {
-  intent: "intent",
+  color: "color",
   size: "size",
   variant: "variant",
   shape: "shape",
@@ -31,8 +31,8 @@ export const ButtonRecipeKeys = {
  * This is the framework-agnostic specification.
  */
 export interface ButtonProps extends BridgeComponentProps, AriaLabelProps, AriaDisabledProps {
-  /** Semantic intent controlling color scheme */
-  intent?: Intent;
+  /** Semantic color scheme */
+  color?: Color;
   /** Visual style variant */
   variant?: Variant;
   /** Size of the button */
@@ -59,7 +59,7 @@ export interface ButtonProps extends BridgeComponentProps, AriaLabelProps, AriaD
  * Default values for ButtonProps.
  */
 export const ButtonDefaults: Partial<ButtonProps> = {
-  intent: "default",
+  color: "default",
   variant: "solid",
   size: "md",
   shape: "rounded",

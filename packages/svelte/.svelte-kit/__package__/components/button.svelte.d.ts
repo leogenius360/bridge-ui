@@ -3,7 +3,7 @@ import type { ButtonProps } from "@bridge-ui/core/button";
 declare const __propDef: {
     props: {
         [x: string]: any;
-        intent?: import("@bridge-ui/core/tokens").Intent | undefined;
+        color?: import("@bridge-ui/core/tokens").Color | undefined;
         variant?: import("@bridge-ui/core/tokens").Variant | undefined;
         size?: import("@bridge-ui/core/tokens").Size | undefined;
         shape?: import("@bridge-ui/core/tokens").Shape | undefined;

@@ -52,7 +52,7 @@ import { buttonRecipe } from "@bridge-ui/styles/recipes";
 
 function App() {
   return (
-    <Button intent="primary" recipe={buttonRecipe}>
+    <Button color="primary" recipe={buttonRecipe}>
       Hello BridgeUI
     </Button>
   );
@@ -83,5 +83,5 @@ function App() {
   import { buttonRecipe } from "@bridge-ui/styles/recipes";
 </script>
 
-<Button intent="primary" recipe={buttonRecipe}>Hello BridgeUI</Button>
+<Button color="primary" recipe={buttonRecipe}>Hello BridgeUI</Button>
 ```

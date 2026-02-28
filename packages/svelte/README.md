@@ -1,6 +1,6 @@
 # @bridge-ui/svelte
 
-Svelte components for BridgeUI — semantic intents, optional Tailwind styling, fully accessible.
+Svelte components for BridgeUI — semantic colors, optional Tailwind styling, fully accessible.
 
 ## Installation
 
@@ -13,7 +13,7 @@ pnpm add @bridge-ui/styles @bridge-ui/tokens
 
 ## Components
 
-- `Button` — Semantic button with intents, variants, sizes, loading state
+- `Button` — Semantic button with colors, variants, sizes, loading state
 - `Dialog` — Accessible modal dialog with backdrop, named slots
 
 ## Usage
@@ -25,7 +25,7 @@ pnpm add @bridge-ui/styles @bridge-ui/tokens
 </script>
 
 <!-- With Tailwind styling -->
-<Button intent="primary" recipe={buttonRecipe}>Click</Button>
+<Button color="primary" recipe={buttonRecipe}>Click</Button>
 
 <!-- Without styling (BYO) -->
 <Button class="my-button">Click</Button>

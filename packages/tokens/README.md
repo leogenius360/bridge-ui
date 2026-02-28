@@ -19,7 +19,7 @@ CSS variable-based design tokens and themes for BridgeUI.
 ```ts
 import { token, IntentTokenNames } from "@bridge-ui/tokens";
 
-token.intentBg("primary"); // "var(--bui-color-primary-bg)"
+token.colorBg("primary"); // "var(--bui-color-primary-bg)"
 ```
 
 ## Token naming

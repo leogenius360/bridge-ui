@@ -3,8 +3,8 @@
  * These are string constants — no runtime DOM or CSS-in-JS.
  */
 
-/** All semantic color intent token names */
-export const IntentTokenNames = [
+/** All semantic color token names */
+export const ColorTokenNames = [
   "default",
   "primary",
   "secondary",
@@ -15,7 +15,7 @@ export const IntentTokenNames = [
   "info",
 ] as const;
 
-export type IntentTokenName = (typeof IntentTokenNames)[number];
+export type ColorTokenName = (typeof ColorTokenNames)[number];
 
 /** Token name builders */
 export const token = {
@@ -23,11 +23,11 @@ export const token = {
   ref: (name: string): string => `var(--bui-${name})`,
   /** Returns a raw CSS variable name: --bui-{name} */
   name: (name: string): string => `--bui-${name}`,
-  /** Returns an intent color reference */
-  intentBg: (intent: IntentTokenName): string => `var(--bui-color-${intent}-bg)`,
-  intentFg: (intent: IntentTokenName): string => `var(--bui-color-${intent}-fg)`,
-  intentBorder: (intent: IntentTokenName): string => `var(--bui-color-${intent}-border)`,
-  intentHoverBg: (intent: IntentTokenName): string => `var(--bui-color-${intent}-hover-bg)`,
+  /** Returns a color background token reference */
+  colorBg: (color: ColorTokenName): string => `var(--bui-color-${color}-bg)`,
+  colorFg: (color: ColorTokenName): string => `var(--bui-color-${color}-fg)`,
+  colorBorder: (color: ColorTokenName): string => `var(--bui-color-${color}-border)`,
+  colorHoverBg: (color: ColorTokenName): string => `var(--bui-color-${color}-hover-bg)`,
 } as const;
 
 /**

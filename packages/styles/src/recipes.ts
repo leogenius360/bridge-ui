@@ -9,7 +9,7 @@ import type { DialogSlot } from "@bridge-ui/core/dialog";
 const buttonBase =
   "inline-flex items-center justify-center gap-2 font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 whitespace-nowrap";
 
-const buttonIntentVariants: Record<string, Record<string, string>> = {
+const buttonColorVariants: Record<string, Record<string, string>> = {
   solid: {
     default: "bg-[var(--bui-color-default-bg)] text-[var(--bui-color-default-fg)] hover:bg-[var(--bui-color-default-hover-bg)] border border-[var(--bui-color-default-border)]",
     primary: "bg-[var(--bui-color-primary-bg)] text-[var(--bui-color-primary-fg)] hover:bg-[var(--bui-color-primary-hover-bg)]",
@@ -78,13 +78,13 @@ const buttonShapeOverrides: Record<string, string> = {
 };
 
 export const buttonRecipe: ClassRecipeFn<ButtonRecipeProps> = (props = {} as ButtonRecipeProps) => {
-  const { intent = "default", variant = "solid", size = "md", shape = "rounded", fullWidth = false } = props;
+  const { color = "default", variant = "solid", size = "md", shape = "rounded", fullWidth = false } = props;
 
-  const intentClass = buttonIntentVariants[variant]?.[intent] ?? buttonIntentVariants["solid"]["default"];
+  const colorClass = buttonColorVariants[variant]?.[color] ?? buttonColorVariants["solid"]["default"];
   const sizeClass = buttonSizeClasses[size] ?? buttonSizeClasses["md"];
   const shapeClass = buttonShapeOverrides[shape] ?? "";
 
-  return cn(buttonBase, intentClass, sizeClass, shapeClass, fullWidth ? "w-full" : "");
+  return cn(buttonBase, colorClass, sizeClass, shapeClass, fullWidth ? "w-full" : "");
 };
 
 export const buttonSlotRecipe: SlotRecipeFn<ButtonRecipeProps, ButtonSlot> = (props = {} as ButtonRecipeProps) => {

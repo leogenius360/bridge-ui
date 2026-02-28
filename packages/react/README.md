@@ -1,6 +1,6 @@
 # @bridge-ui/react
 
-React components for BridgeUI — semantic intents, optional Tailwind styling, fully accessible.
+React components for BridgeUI — semantic colors, optional Tailwind styling, fully accessible.
 
 ## Installation
 
@@ -13,7 +13,7 @@ pnpm add @bridge-ui/styles @bridge-ui/tokens
 
 ## Components
 
-- `Button` — Semantic button with intents, variants, sizes, loading state
+- `Button` — Semantic button with colors, variants, sizes, loading state
 - `Dialog` — Accessible modal dialog with backdrop, slots
 
 ## Hooks
@@ -27,7 +27,7 @@ pnpm add @bridge-ui/styles @bridge-ui/tokens
 import { Button } from "@bridge-ui/react";
 import { buttonRecipe } from "@bridge-ui/styles/recipes";
 
-<Button intent="primary" recipe={buttonRecipe}>Click</Button>
+<Button color="primary" recipe={buttonRecipe}>Click</Button>
 
 // Without styling (BYO)
 <Button className="my-button">Click</Button>

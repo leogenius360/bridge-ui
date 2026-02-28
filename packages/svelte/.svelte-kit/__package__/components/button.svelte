@@ -4,8 +4,8 @@
   import { cn } from "@bridge-ui/utils";
 
   // ── Props ──────────────────────────────────────────────────────────────
-  /** Semantic intent */
-  export let intent: ButtonProps["intent"] = ButtonDefaults.intent;
+  /** Semantic color scheme */
+  export let color: ButtonProps["color"] = ButtonDefaults.color;
   /** Visual variant */
   export let variant: ButtonProps["variant"] = ButtonDefaults.variant;
   /** Size */
@@ -33,7 +33,7 @@
 
   // ── Derived ────────────────────────────────────────────────────────────
   $: recipeClass = recipe
-    ? recipe({ intent, variant, size, shape, loading, disabled, fullWidth })
+    ? recipe({ color, variant, size, shape, loading, disabled, fullWidth })
     : "";
   $: isDisabled = disabled || loading;
   $: computedClass = cn(recipeClass, className);

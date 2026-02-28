@@ -56,7 +56,7 @@ Two modes:
 
 ```tsx
 import { buttonRecipe } from "@bridge-ui/styles/recipes";
-<Button intent="primary" recipe={buttonRecipe}>Click</Button>
+<Button color="primary" recipe={buttonRecipe}>Click</Button>
 ```
 
 **Mode B — Unstyled / BYO**

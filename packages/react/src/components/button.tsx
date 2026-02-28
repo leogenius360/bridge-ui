@@ -16,14 +16,14 @@ export type { ButtonProps };
  * ```tsx
  * // Styled
  * import { buttonRecipe } from "@bridge-ui/styles/recipes";
- * <Button intent="primary" recipe={buttonRecipe}>Click me</Button>
+ * <Button color="primary" recipe={buttonRecipe}>Click me</Button>
  *
  * // Unstyled
  * <Button className="my-custom-button">Click me</Button>
  * ```
  */
 export interface ReactButtonProps
-  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "children">,
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "children" | "color">,
     Omit<ButtonProps, "onClick" | "aria-disabled"> {
   children?: React.ReactNode;
   /**
@@ -37,7 +37,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ReactButtonProps>(
   (
     {
       children,
-      intent = ButtonDefaults.intent,
+      color = ButtonDefaults.color ?? "default",
       variant = ButtonDefaults.variant,
       size = ButtonDefaults.size,
       shape = ButtonDefaults.shape,
@@ -55,7 +55,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ReactButtonProps>(
     ref,
   ) => {
     const recipeClass = recipe
-      ? recipe({ intent, variant, size, shape, loading, disabled: !!disabled, fullWidth })
+      ? recipe({ color, variant, size, shape, loading, disabled: !!disabled, fullWidth })
       : "";
 
     const isDisabled = disabled || loading;

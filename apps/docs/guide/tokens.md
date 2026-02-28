@@ -22,14 +22,14 @@ pnpm add @bridge-ui/tokens
 
 All tokens are prefixed with `--bui-` to avoid conflicts.
 
-### Semantic intent tokens
+### Semantic color tokens
 
 | Token | Description |
 |---|---|
-| `--bui-color-primary-bg` | Background for primary intent |
-| `--bui-color-primary-fg` | Foreground/text for primary intent |
-| `--bui-color-primary-border` | Border color for primary intent |
-| `--bui-color-primary-hover-bg` | Hover background for primary intent |
+| `--bui-color-primary-bg` | Background for primary color |
+| `--bui-color-primary-fg` | Foreground/text for primary color |
+| `--bui-color-primary-border` | Border color for primary color |
+| `--bui-color-primary-hover-bg` | Hover background for primary color |
 
 Same pattern for: `default`, `secondary`, `destructive`, `success`, `warning`, `info`.
 
@@ -62,5 +62,5 @@ import { token, IntentTokenNames } from "@bridge-ui/tokens";
 
 // Get a CSS variable reference
 token.ref("color-primary-bg"); // "var(--bui-color-primary-bg)"
-token.intentBg("primary");     // "var(--bui-color-primary-bg)"
+token.colorBg("primary");      // "var(--bui-color-primary-bg)"
 ```

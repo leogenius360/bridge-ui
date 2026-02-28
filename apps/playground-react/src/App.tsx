@@ -14,7 +14,7 @@ export default function App() {
 
       {/* ── Buttons ─────────────────────────────────────────────────── */}
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4">Button — intents</h2>
+        <h2 className="text-xl font-semibold mb-4">Button — colors</h2>
         <div className="flex flex-wrap gap-3">
           {(
             [
@@ -26,9 +26,9 @@ export default function App() {
               "warning",
               "info",
             ] as const
-          ).map((intent) => (
-            <Button key={intent} intent={intent} recipe={buttonRecipe}>
-              {intent}
+          ).map((color) => (
+            <Button key={color} color={color} recipe={buttonRecipe}>
+              {color}
             </Button>
           ))}
         </div>
@@ -38,7 +38,7 @@ export default function App() {
         <h2 className="text-xl font-semibold mb-4">Button — variants</h2>
         <div className="flex flex-wrap gap-3">
           {(["solid", "outline", "ghost", "subtle", "link"] as const).map((variant) => (
-            <Button key={variant} intent="primary" variant={variant} recipe={buttonRecipe}>
+            <Button key={variant} color="primary" variant={variant} recipe={buttonRecipe}>
               {variant}
             </Button>
           ))}
@@ -49,7 +49,7 @@ export default function App() {
         <h2 className="text-xl font-semibold mb-4">Button — sizes</h2>
         <div className="flex flex-wrap items-center gap-3">
           {(["xs", "sm", "md", "lg", "xl"] as const).map((size) => (
-            <Button key={size} intent="primary" size={size} recipe={buttonRecipe}>
+            <Button key={size} color="primary" size={size} recipe={buttonRecipe}>
               {size}
             </Button>
           ))}
@@ -59,10 +59,10 @@ export default function App() {
       <section className="mb-10">
         <h2 className="text-xl font-semibold mb-4">Button — loading & disabled</h2>
         <div className="flex flex-wrap gap-3">
-          <Button intent="primary" loading recipe={buttonRecipe}>
+          <Button color="primary" loading recipe={buttonRecipe}>
             Loading…
           </Button>
-          <Button intent="primary" disabled recipe={buttonRecipe}>
+          <Button color="primary" disabled recipe={buttonRecipe}>
             Disabled
           </Button>
         </div>
@@ -78,7 +78,7 @@ export default function App() {
       {/* ── Dialog ──────────────────────────────────────────────────── */}
       <section className="mb-10">
         <h2 className="text-xl font-semibold mb-4">Dialog</h2>
-        <Button intent="primary" recipe={buttonRecipe} onClick={dialog.onOpen}>
+        <Button color="primary" recipe={buttonRecipe} onClick={dialog.onOpen}>
           Open Dialog
         </Button>
         <Dialog
@@ -88,7 +88,7 @@ export default function App() {
           description="This is a BridgeUI dialog component with Tailwind styling."
           slotRecipe={dialogSlotRecipe}
           footer={
-            <Button intent="primary" recipe={buttonRecipe} onClick={dialog.onClose}>
+            <Button color="primary" recipe={buttonRecipe} onClick={dialog.onClose}>
               Close
             </Button>
           }

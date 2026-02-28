@@ -1,6 +1,6 @@
 # Button
 
-The `Button` component supports semantic intents, visual variants, sizes, shapes, loading state, and icons.
+The `Button` component supports semantic colors, visual variants, sizes, shapes, loading state, and icons.
 
 ## Import
 
@@ -20,14 +20,14 @@ import Button from "@bridge-ui/svelte/button";
 ```tsx
 import { buttonRecipe } from "@bridge-ui/styles/recipes";
 
-<Button intent="primary" recipe={buttonRecipe}>Click me</Button>
+<Button color="primary" recipe={buttonRecipe}>Click me</Button>
 ```
 
 ## Props
 
 | Prop | Type | Default | Description |
 |---|---|---|---|
-| `intent` | `Intent` | `"default"` | Semantic color intent |
+| `color` | `Color` | `"default"` | Semantic color scheme |
 | `variant` | `Variant` | `"solid"` | Visual style |
 | `size` | `Size` | `"md"` | Button size |
 | `shape` | `Shape` | `"rounded"` | Border radius shape |
@@ -39,26 +39,26 @@ import { buttonRecipe } from "@bridge-ui/styles/recipes";
 | `recipe` | `(props?) => string` | — | Class recipe (opt-in styling) |
 | `className` | `string` | — | Additional classes |
 
-## Intent
+## Color
 
 ```tsx
-<Button intent="default" recipe={buttonRecipe}>Default</Button>
-<Button intent="primary" recipe={buttonRecipe}>Primary</Button>
-<Button intent="secondary" recipe={buttonRecipe}>Secondary</Button>
-<Button intent="destructive" recipe={buttonRecipe}>Destructive</Button>
-<Button intent="success" recipe={buttonRecipe}>Success</Button>
-<Button intent="warning" recipe={buttonRecipe}>Warning</Button>
-<Button intent="info" recipe={buttonRecipe}>Info</Button>
+<Button color="default" recipe={buttonRecipe}>Default</Button>
+<Button color="primary" recipe={buttonRecipe}>Primary</Button>
+<Button color="secondary" recipe={buttonRecipe}>Secondary</Button>
+<Button color="destructive" recipe={buttonRecipe}>Destructive</Button>
+<Button color="success" recipe={buttonRecipe}>Success</Button>
+<Button color="warning" recipe={buttonRecipe}>Warning</Button>
+<Button color="info" recipe={buttonRecipe}>Info</Button>
 ```
 
 ## Variants
 
 ```tsx
-<Button intent="primary" variant="solid" recipe={buttonRecipe}>Solid</Button>
-<Button intent="primary" variant="outline" recipe={buttonRecipe}>Outline</Button>
-<Button intent="primary" variant="ghost" recipe={buttonRecipe}>Ghost</Button>
-<Button intent="primary" variant="subtle" recipe={buttonRecipe}>Subtle</Button>
-<Button intent="primary" variant="link" recipe={buttonRecipe}>Link</Button>
+<Button color="primary" variant="solid" recipe={buttonRecipe}>Solid</Button>
+<Button color="primary" variant="outline" recipe={buttonRecipe}>Outline</Button>
+<Button color="primary" variant="ghost" recipe={buttonRecipe}>Ghost</Button>
+<Button color="primary" variant="subtle" recipe={buttonRecipe}>Subtle</Button>
+<Button color="primary" variant="link" recipe={buttonRecipe}>Link</Button>
 ```
 
 ## Sizes

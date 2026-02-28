@@ -1,8 +1,8 @@
 /**
- * BridgeUI semantic intent values.
+ * BridgeUI semantic color values.
  * These map to design tokens and are used across all frameworks.
  */
-export type Intent =
+export type Color =
   | "default"
   | "primary"
   | "secondary"
