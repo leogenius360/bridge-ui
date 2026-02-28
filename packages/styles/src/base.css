@@ -1,0 +1,23 @@
+/**
+ * Minimal base CSS reset for BridgeUI components.
+ * This is an optional import — not included by default.
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Normalize focus-visible outlines */
+:focus-visible {
+  outline: 2px solid var(--bui-color-primary-500, #3b82f6);
+  outline-offset: 2px;
+}
+
+/* Remove list styles for semantic lists */
+[role="list"] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,49 @@
+{
+  "name": "@bridge-ui/styles",
+  "version": "0.0.1",
+  "description": "Optional Tailwind preset and class recipes for BridgeUI",
+  "sideEffects": ["*.css"],
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./preset": {
+      "import": "./dist/preset.js",
+      "types": "./dist/preset.d.ts"
+    },
+    "./recipes": {
+      "import": "./dist/recipes.js",
+      "types": "./dist/recipes.d.ts"
+    },
+    "./base.css": "./src/base.css"
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "typecheck": "tsc --project tsconfig.json --noEmit",
+    "lint": "eslint src",
+    "clean": "rimraf dist"
+  },
+  "peerDependencies": {
+    "tailwindcss": ">=3.4.0"
+  },
+  "peerDependenciesMeta": {
+    "tailwindcss": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@bridge-ui/core": "workspace:*",
+    "@bridge-ui/utils": "workspace:*"
+  },
+  "devDependencies": {
+    "@bridge-ui/tsconfig": "workspace:*",
+    "rimraf": "^5.0.5",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.3"
+  }
+}

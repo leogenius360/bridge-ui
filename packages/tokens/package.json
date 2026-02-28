@@ -1,0 +1,29 @@
+{
+  "name": "@bridge-ui/tokens",
+  "version": "0.0.1",
+  "description": "CSS variable-based design tokens and themes for BridgeUI",
+  "sideEffects": ["*.css"],
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./themes/default": "./themes/default.css",
+    "./themes/dark": "./themes/dark.css"
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "typecheck": "tsc --project tsconfig.json --noEmit",
+    "lint": "eslint src",
+    "clean": "rimraf dist"
+  },
+  "devDependencies": {
+    "@bridge-ui/tsconfig": "workspace:*",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.4.3"
+  }
+}

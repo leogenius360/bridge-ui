@@ -1,0 +1,153 @@
+/**
+ * BridgeUI default theme — light mode.
+ * Uses CSS custom properties on :root.
+ */
+:root {
+  /* ── Color scale: neutral ─────────────────────────────── */
+  --bui-color-neutral-50: #fafafa;
+  --bui-color-neutral-100: #f5f5f5;
+  --bui-color-neutral-200: #e5e5e5;
+  --bui-color-neutral-300: #d4d4d4;
+  --bui-color-neutral-400: #a3a3a3;
+  --bui-color-neutral-500: #737373;
+  --bui-color-neutral-600: #525252;
+  --bui-color-neutral-700: #404040;
+  --bui-color-neutral-800: #262626;
+  --bui-color-neutral-900: #171717;
+
+  /* ── Color scale: primary ─────────────────────────────── */
+  --bui-color-primary-50: #eff6ff;
+  --bui-color-primary-100: #dbeafe;
+  --bui-color-primary-200: #bfdbfe;
+  --bui-color-primary-300: #93c5fd;
+  --bui-color-primary-400: #60a5fa;
+  --bui-color-primary-500: #3b82f6;
+  --bui-color-primary-600: #2563eb;
+  --bui-color-primary-700: #1d4ed8;
+  --bui-color-primary-800: #1e40af;
+  --bui-color-primary-900: #1e3a8a;
+
+  /* ── Color scale: secondary ───────────────────────────── */
+  --bui-color-secondary-50: #f5f3ff;
+  --bui-color-secondary-100: #ede9fe;
+  --bui-color-secondary-200: #ddd6fe;
+  --bui-color-secondary-300: #c4b5fd;
+  --bui-color-secondary-400: #a78bfa;
+  --bui-color-secondary-500: #8b5cf6;
+  --bui-color-secondary-600: #7c3aed;
+  --bui-color-secondary-700: #6d28d9;
+  --bui-color-secondary-800: #5b21b6;
+  --bui-color-secondary-900: #4c1d95;
+
+  /* ── Color scale: success ─────────────────────────────── */
+  --bui-color-success-50: #f0fdf4;
+  --bui-color-success-100: #dcfce7;
+  --bui-color-success-500: #22c55e;
+  --bui-color-success-600: #16a34a;
+  --bui-color-success-700: #15803d;
+
+  /* ── Color scale: warning ─────────────────────────────── */
+  --bui-color-warning-50: #fffbeb;
+  --bui-color-warning-100: #fef3c7;
+  --bui-color-warning-500: #f59e0b;
+  --bui-color-warning-600: #d97706;
+  --bui-color-warning-700: #b45309;
+
+  /* ── Color scale: destructive ─────────────────────────── */
+  --bui-color-destructive-50: #fef2f2;
+  --bui-color-destructive-100: #fee2e2;
+  --bui-color-destructive-500: #ef4444;
+  --bui-color-destructive-600: #dc2626;
+  --bui-color-destructive-700: #b91c1c;
+
+  /* ── Color scale: info ────────────────────────────────── */
+  --bui-color-info-50: #ecfeff;
+  --bui-color-info-100: #cffafe;
+  --bui-color-info-500: #06b6d4;
+  --bui-color-info-600: #0891b2;
+  --bui-color-info-700: #0e7490;
+
+  /* ── Semantic tokens ──────────────────────────────────── */
+  --bui-bg: var(--bui-color-neutral-50);
+  --bui-bg-surface: #ffffff;
+  --bui-fg: var(--bui-color-neutral-900);
+  --bui-fg-muted: var(--bui-color-neutral-500);
+  --bui-border: var(--bui-color-neutral-200);
+
+  /* Intent tokens */
+  --bui-color-default-bg: var(--bui-color-neutral-100);
+  --bui-color-default-fg: var(--bui-color-neutral-800);
+  --bui-color-default-border: var(--bui-color-neutral-300);
+  --bui-color-default-hover-bg: var(--bui-color-neutral-200);
+
+  --bui-color-primary-bg: var(--bui-color-primary-600);
+  --bui-color-primary-fg: #ffffff;
+  --bui-color-primary-border: var(--bui-color-primary-600);
+  --bui-color-primary-hover-bg: var(--bui-color-primary-700);
+
+  --bui-color-secondary-bg: var(--bui-color-secondary-600);
+  --bui-color-secondary-fg: #ffffff;
+  --bui-color-secondary-border: var(--bui-color-secondary-600);
+  --bui-color-secondary-hover-bg: var(--bui-color-secondary-700);
+
+  --bui-color-destructive-bg: var(--bui-color-destructive-600);
+  --bui-color-destructive-fg: #ffffff;
+  --bui-color-destructive-border: var(--bui-color-destructive-600);
+  --bui-color-destructive-hover-bg: var(--bui-color-destructive-700);
+
+  --bui-color-success-bg: var(--bui-color-success-600);
+  --bui-color-success-fg: #ffffff;
+  --bui-color-success-border: var(--bui-color-success-600);
+  --bui-color-success-hover-bg: var(--bui-color-success-700);
+
+  --bui-color-warning-bg: var(--bui-color-warning-500);
+  --bui-color-warning-fg: #ffffff;
+  --bui-color-warning-border: var(--bui-color-warning-500);
+  --bui-color-warning-hover-bg: var(--bui-color-warning-600);
+
+  --bui-color-info-bg: var(--bui-color-info-600);
+  --bui-color-info-fg: #ffffff;
+  --bui-color-info-border: var(--bui-color-info-600);
+  --bui-color-info-hover-bg: var(--bui-color-info-700);
+
+  /* ── Spacing ──────────────────────────────────────────── */
+  --bui-spacing-xs: 0.25rem;
+  --bui-spacing-sm: 0.5rem;
+  --bui-spacing-md: 0.75rem;
+  --bui-spacing-lg: 1rem;
+  --bui-spacing-xl: 1.5rem;
+
+  /* ── Typography ───────────────────────────────────────── */
+  --bui-font-size-xs: 0.75rem;
+  --bui-font-size-sm: 0.875rem;
+  --bui-font-size-md: 1rem;
+  --bui-font-size-lg: 1.125rem;
+  --bui-font-size-xl: 1.25rem;
+  --bui-font-family-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  --bui-font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* ── Border radius ────────────────────────────────────── */
+  --bui-radius-none: 0;
+  --bui-radius-sm: 0.125rem;
+  --bui-radius-md: 0.375rem;
+  --bui-radius-lg: 0.5rem;
+  --bui-radius-xl: 0.75rem;
+  --bui-radius-full: 9999px;
+
+  /* ── Shadows ──────────────────────────────────────────── */
+  --bui-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --bui-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --bui-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --bui-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  /* ── Z-index ──────────────────────────────────────────── */
+  --bui-z-modal: 1000;
+  --bui-z-popover: 900;
+  --bui-z-tooltip: 800;
+  --bui-z-overlay: 700;
+
+  /* ── Transition ───────────────────────────────────────── */
+  --bui-transition-duration: 150ms;
+  --bui-transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
+}

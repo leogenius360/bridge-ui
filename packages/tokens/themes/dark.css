@@ -1,0 +1,68 @@
+/**
+ * BridgeUI dark theme.
+ * Apply [data-theme="dark"] to your root element, or rely on
+ * the prefers-color-scheme media query.
+ */
+[data-theme="dark"],
+.bui-dark {
+  /* ── Semantic tokens (dark overrides) ─────────────────── */
+  --bui-bg: var(--bui-color-neutral-900);
+  --bui-bg-surface: var(--bui-color-neutral-800);
+  --bui-fg: var(--bui-color-neutral-50);
+  --bui-fg-muted: var(--bui-color-neutral-400);
+  --bui-border: var(--bui-color-neutral-700);
+
+  /* Intent tokens — dark */
+  --bui-color-default-bg: var(--bui-color-neutral-800);
+  --bui-color-default-fg: var(--bui-color-neutral-100);
+  --bui-color-default-border: var(--bui-color-neutral-600);
+  --bui-color-default-hover-bg: var(--bui-color-neutral-700);
+
+  --bui-color-primary-bg: var(--bui-color-primary-500);
+  --bui-color-primary-hover-bg: var(--bui-color-primary-400);
+
+  --bui-color-secondary-bg: var(--bui-color-secondary-500);
+  --bui-color-secondary-hover-bg: var(--bui-color-secondary-400);
+
+  --bui-color-destructive-bg: var(--bui-color-destructive-500);
+  --bui-color-destructive-hover-bg: var(--bui-color-destructive-400);
+
+  --bui-color-success-bg: var(--bui-color-success-500);
+  --bui-color-success-hover-bg: var(--bui-color-success-600);
+
+  --bui-color-warning-bg: var(--bui-color-warning-500);
+  --bui-color-warning-hover-bg: var(--bui-color-warning-400);
+
+  --bui-color-info-bg: var(--bui-color-info-500);
+  --bui-color-info-hover-bg: var(--bui-color-info-400);
+
+  /* ── Shadows (darker for dark mode) ─────────────────── */
+  --bui-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --bui-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4);
+  --bui-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+  --bui-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.4), 0 8px 10px -6px rgb(0 0 0 / 0.4);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not(.bui-light) {
+    --bui-bg: var(--bui-color-neutral-900);
+    --bui-bg-surface: var(--bui-color-neutral-800);
+    --bui-fg: var(--bui-color-neutral-50);
+    --bui-fg-muted: var(--bui-color-neutral-400);
+    --bui-border: var(--bui-color-neutral-700);
+
+    --bui-color-default-bg: var(--bui-color-neutral-800);
+    --bui-color-default-fg: var(--bui-color-neutral-100);
+    --bui-color-default-border: var(--bui-color-neutral-600);
+    --bui-color-default-hover-bg: var(--bui-color-neutral-700);
+
+    --bui-color-primary-bg: var(--bui-color-primary-500);
+    --bui-color-primary-hover-bg: var(--bui-color-primary-400);
+
+    --bui-color-secondary-bg: var(--bui-color-secondary-500);
+    --bui-color-secondary-hover-bg: var(--bui-color-secondary-400);
+
+    --bui-color-destructive-bg: var(--bui-color-destructive-500);
+    --bui-color-destructive-hover-bg: var(--bui-color-destructive-400);
+  }
+}

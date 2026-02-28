@@ -1,0 +1,47 @@
+{
+  "name": "@bridge-ui/core",
+  "version": "0.0.1",
+  "description": "Framework-agnostic contracts, types, recipes, and slot definitions for BridgeUI",
+  "sideEffects": false,
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./button": {
+      "import": "./dist/components/button.js",
+      "types": "./dist/components/button.d.ts"
+    },
+    "./dialog": {
+      "import": "./dist/components/dialog.js",
+      "types": "./dist/components/dialog.d.ts"
+    },
+    "./recipes": {
+      "import": "./dist/recipes/index.js",
+      "types": "./dist/recipes/index.d.ts"
+    },
+    "./tokens": {
+      "import": "./dist/tokens/index.js",
+      "types": "./dist/tokens/index.d.ts"
+    },
+    "./a11y": {
+      "import": "./dist/a11y/index.js",
+      "types": "./dist/a11y/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "typecheck": "tsc --project tsconfig.json --noEmit",
+    "lint": "eslint src",
+    "clean": "rimraf dist"
+  },
+  "devDependencies": {
+    "@bridge-ui/tsconfig": "workspace:*",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.4.3"
+  }
+}
